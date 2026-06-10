@@ -1,0 +1,109 @@
+html_content = """<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página</title>
+    <style>
+        /* Paleta de colores basada en el ranking de pádel */
+        body {
+            background-color: #0d0d0d; /* Fondo general muy oscuro */
+            color: #ffffff; /* Texto general blanco */
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            background-color: #1a1a1a; /* Fondo de cabecera oscuro */
+            width: 100%;
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 2px solid #ff2a2a; /* Acento rojo */
+        }
+        h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin-top: 40px;
+            background-color: #1a1a1a; /* Fondo de contenedor */
+            padding: 30px;
+            border-radius: 4px;
+            border: 1px solid #333333; /* Borde sutil */
+        }
+        h2 {
+            color: #ff2a2a; /* Títulos secundarios en rojo */
+            border-bottom: 1px solid #333333;
+            padding-bottom: 10px;
+            text-transform: uppercase;
+        }
+        p {
+            line-height: 1.6;
+            color: #cccccc; /* Texto secundario gris claro */
+        }
+        .accent-text {
+            color: #ff2a2a; /* Texto resaltado en rojo */
+            font-weight: bold;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #333333;
+        }
+        th {
+            background-color: #262626;
+            color: #ffffff;
+        }
+        .points {
+            color: #ff2a2a;
+            font-weight: bold;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Título de la Página</h1>
+    </header>
+    <div class="container">
+        <h2>Sección Principal</h2>
+        <p>Esta es una plantilla generada con los colores de tu proyecto anterior (fondo oscuro, texto claro y detalles en <span class="accent-text">rojo</span>).</p>
+        <p>No especificaste el texto ni la estructura interna, por lo que debes abrir este archivo con un editor de código o de texto (como el Bloc de notas) y modificar el contenido entre las etiquetas HTML antes de subirlo a GitHub.</p>
+        
+        <table>
+            <tr>
+                <th>#</th>
+                <th>Elemento de ejemplo</th>
+                <th style="text-align: right;">Valor</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Dato de prueba</td>
+                <td class="points">100</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Otro dato</td>
+                <td class="points">50</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
+"""
+with open('index.html', 'w', encoding='utf-8') as f:
+    f.write(html_content)
+print("File saved as index.html")

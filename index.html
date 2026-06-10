@@ -3,124 +3,149 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SDE Padel Tour 2026</title>
+<title>Mi Web Profesional</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
 <style>
-  body { margin:0; font-family: Arial, sans-serif; background:#0a0a0f; color:#eee; }
-  header { background:#111; display:flex; align-items:center; padding:10px 20px; position:sticky; top:0; z-index:100; }
-  header img { height:50px; margin-right:20px; }
-  nav a { color:#aaa; margin-right:20px; text-decoration:none; font-weight:bold; }
-  nav a.active { color:red; }
-  section { padding:40px 20px; }
-  h1, h2 { color:#fff; }
-  .counters { display:flex; gap:40px; font-size:18px; margin-top:20px; }
-  .counter-number { font-size:36px; font-weight:bold; }
-  table { width:100%; border-collapse:collapse; margin-top:20px; }
-  th, td { padding:10px; border-bottom:1px solid #444; text-align:left; }
-  th { background:#222; }
-  button { background:red; color:#fff; border:none; padding:5px 10px; cursor:pointer; margin-bottom:10px; }
-  #sponsors div { display:inline-block; margin:10px; }
-  #sponsors img { height:50px; }
-  @media(max-width:600px){ .counters{flex-direction:column;gap:10px;} }
+:root {
+    --color-fondo: #000000;
+    --color-rojo: #FF0000;
+    --color-celeste: #00FFFF;
+    --color-blanco: #FFFFFF;
+}
+
+/* Reset */
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Roboto', sans-serif; background-color: var(--color-fondo); color: var(--color-blanco); line-height:1.6; }
+
+/* Links */
+a { text-decoration:none; color: var(--color-celeste);}
+a:hover { color: var(--color-rojo); }
+
+/* Header */
+header { padding:20px; text-align:center; border-bottom:2px solid var(--color-rojo);}
+header h1 { font-family:'Montserrat', sans-serif; color: var(--color-rojo); font-size:2.5rem; }
+nav { margin-top:10px;}
+nav a { margin:0 15px; font-weight:500; transition:color 0.3s; }
+
+/* Sections */
+section { padding:60px 20px; text-align:center;}
+section h2 { color: var(--color-celeste); font-family:'Montserrat', sans-serif; margin-bottom:20px;}
+section p { max-width:600px; margin:0 auto 20px; color: var(--color-blanco);}
+
+/* Buttons */
+.btn {
+    display:inline-block; padding:12px 25px; margin-top:10px; font-weight:bold;
+    text-transform:uppercase; border:2px solid var(--color-rojo); background-color: var(--color-rojo);
+    color: var(--color-blanco); border-radius:8px; transition:0.3s;
+}
+.btn:hover { background-color: var(--color-blanco); color: var(--color-rojo); cursor:pointer; }
+
+/* Counter style */
+.counter { font-size:2rem; color: var(--color-rojo); margin-top:10px; font-weight:bold; }
+
+/* Slider de sponsors */
+.slider {
+    display:flex; overflow:hidden; gap:20px; padding:20px 0;
+    animation: scroll 20s linear infinite;
+}
+.slider img { height:60px; object-fit:contain; transition: transform 0.3s; }
+.slider img:hover { transform: scale(1.2); }
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Footer */
+footer { background-color:#111111; color: var(--color-blanco); padding:20px; text-align:center; border-top:2px solid var(--color-rojo); }
+
+/* Responsive */
+@media (max-width:768px){ header h1{ font-size:2rem; } }
 </style>
 </head>
 <body>
 
+<!-- Header -->
 <header>
-  <img src="https://via.placeholder.com/100x50?text=SDE" alt="SDE Padel Tour">
-  <nav>
-    <a href="#inicio" class="active">Inicio</a>
-    <a href="#torneos">Torneos</a>
-    <a href="#ranking">Ranking</a>
-    <a href="#sponsors">Sponsors</a>
-  </nav>
+    <h1>Mi Web Profesional</h1>
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#torneos">Torneos</a>
+        <a href="#ranking">Ranking</a>
+        <a href="#sponsors">Sponsors</a>
+    </nav>
 </header>
 
+<!-- Inicio -->
 <section id="inicio">
-  <h1>SDE Padel Tour 2026</h1>
-  <p>Seguí cada torneo, consultá el ranking en tiempo real y reviví los mejores momentos.</p>
-  <div class="counters">
-    <div><div class="counter-number" id="torneosCount">0</div>Torneos</div>
-    <div><div class="counter-number" id="jugadoresCount">0</div>Jugadores</div>
-  </div>
+    <h2>Bienvenido</h2>
+    <p>Esta es la página principal donde puedes comentar quiénes somos y qué hacemos.</p>
+    <a class="btn" href="#torneos">Ver Torneos</a>
 </section>
 
+<!-- Torneos -->
 <section id="torneos">
-  <h2>Próximos Torneos</h2>
-  <ul id="listaTorneos"></ul>
+    <h2>Torneos</h2>
+    <ul id="lista-torneos"></ul>
+    <p>Total jugadores: <span class="counter" id="total-jugadores">0</span></p>
 </section>
 
+<!-- Ranking -->
 <section id="ranking">
-  <h2>Ranking</h2>
-  <div id="rankingContainer"></div>
+    <h2>Ranking</h2>
+    <p>Actualiza los puntos de los jugadores por categoría (1ra a 5ta).</p>
 </section>
 
+<!-- Sponsors -->
 <section id="sponsors">
-  <h2>Sponsors</h2>
-  <div id="logosSponsors"></div>
-  <p>Subí aquí los logos de tus sponsors.</p>
+    <h2>Sponsors</h2>
+    <div class="slider" id="slider-logos">
+        <img src="logo1.png" alt="Sponsor 1">
+        <img src="logo2.png" alt="Sponsor 2">
+        <img src="logo3.png" alt="Sponsor 3">
+        <img src="logo4.png" alt="Sponsor 4">
+        <img src="logo5.png" alt="Sponsor 5">
+        <!-- Copia los logos para hacer scroll continuo -->
+    </div>
 </section>
 
+<!-- Footer -->
+<footer>
+    <p>© 2026 Mi Web. Todos los derechos reservados.</p>
+</footer>
+
+<!-- Scripts -->
 <script>
-const jsonFile = 'ranking_padeltour.json';
+// Datos de torneos (modifica fechas y jugadores aquí)
 const torneos = [
-  {nombre:"Torneo Enero", fecha:"2026-01-15"},
-  {nombre:"Torneo Febrero", fecha:"2026-02-20"}
+    { nombre:"Torneo 1", fecha:"2026-06-15", jugadores:12 },
+    { nombre:"Torneo 2", fecha:"2026-07-05", jugadores:16 },
+    { nombre:"Torneo 3", fecha:"2026-08-20", jugadores:10 },
 ];
-const sponsors = [
-  {nombre:"Molins Sport", logo:"https://via.placeholder.com/100x50?text=Molins"}
-];
-function mostrarTorneos(){
-  const ul = document.getElementById("listaTorneos");
-  ul.innerHTML = '';
-  torneos.forEach(t => {
+
+// Mostrar torneos y contador animado
+const lista = document.getElementById("lista-torneos");
+let totalJugadores = 0;
+
+torneos.forEach(torneo=>{
     const li = document.createElement("li");
-    li.textContent = `${t.nombre} - ${t.fecha}`;
-    ul.appendChild(li);
-  });
-  document.getElementById("torneosCount").textContent = torneos.length;
-}
-function mostrarSponsors(){
-  const div = document.getElementById("logosSponsors");
-  div.innerHTML = '';
-  sponsors.forEach(s => {
-    const logoDiv = document.createElement("div");
-    const img = document.createElement("img");
-    img.src = s.logo;
-    img.alt = s.nombre;
-    logoDiv.appendChild(img);
-    div.appendChild(logoDiv);
-  });
-}
-function mostrarRanking(data){
-  const container = document.getElementById("rankingContainer");
-  container.innerHTML = '';
-  let totalJugadores = 0;
-  for(const categoria in data){
-    totalJugadores += data[categoria].length;
-    const h3 = document.createElement("h3");
-    h3.textContent = categoria;
-    container.appendChild(h3);
-    const table = document.createElement("table");
-    const thead = document.createElement("thead");
-    thead.innerHTML = '<tr><th>Jugador</th><th>Puntos</th></tr>';
-    table.appendChild(thead);
-    const tbody = document.createElement("tbody");
-    data[categoria].sort((a,b)=>b.Puntos-a.Puntos).forEach(j => {
-      const tr = document.createElement("tr");
-      tr.innerHTML = `<td>${j.Jugador}</td><td>${j.Puntos}</td>`;
-      tbody.appendChild(tr);
-    });
-    table.appendChild(tbody);
-    container.appendChild(table);
-  }
-  document.getElementById("jugadoresCount").textContent = totalJugadores;
-}
-fetch(jsonFile)
-  .then(resp => resp.json())
-  .then(data => mostrarRanking(data))
-  .catch(err => console.error("Error cargando ranking:", err));
-mostrarTorneos();
-mostrarSponsors();
+    li.textContent = `${torneo.nombre} - Fecha: ${torneo.fecha} - Jugadores: ${torneo.jugadores}`;
+    lista.appendChild(li);
+    totalJugadores += torneo.jugadores;
+});
+
+// Animación del contador
+const contador = document.getElementById("total-jugadores");
+let current = 0;
+const step = Math.ceil(totalJugadores / 100);
+const interval = setInterval(()=>{
+    current += step;
+    if(current >= totalJugadores){ current = totalJugadores; clearInterval(interval); }
+    contador.textContent = current;
+}, 20);
 </script>
 
 </body>

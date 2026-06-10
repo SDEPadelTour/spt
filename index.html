@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SDE Padel Tour 2026</title>
+<style>
+  body { margin:0; font-family: Arial, sans-serif; background:#0a0a0f; color:#eee; }
+  header { background:#111; display:flex; align-items:center; padding:10px 20px; position:sticky; top:0; z-index:100; }
+  header img { height:50px; margin-right:20px; }
+  nav a { color:#aaa; margin-right:20px; text-decoration:none; font-weight:bold; }
+  nav a.active { color:red; }
+  section { padding:40px 20px; }
+  h1, h2 { color:#fff; }
+  .counters { display:flex; gap:40px; font-size:18px; margin-top:20px; }
+  .counter-number { font-size:36px; font-weight:bold; }
+  table { width:100%; border-collapse:collapse; margin-top:20px; }
+  th, td { padding:10px; border-bottom:1px solid #444; text-align:left; }
+  th { background:#222; }
+  button { background:red; color:#fff; border:none; padding:5px 10px; cursor:pointer; margin-bottom:10px; }
+  #sponsors div { display:inline-block; margin:10px; }
+  #sponsors img { height:50px; }
+  @media(max-width:600px){ .counters{flex-direction:column;gap:10px;} }
+</style>
+</head>
+<body>
+
+<header>
+  <img src="https://via.placeholder.com/100x50?text=SDE" alt="SDE Padel Tour">
+  <nav>
+    <a href="#inicio" class="active">Inicio</a>
+    <a href="#torneos">Torneos</a>
+    <a href="#ranking">Ranking</a>
+    <a href="#sponsors">Sponsors</a>
+  </nav>
+</header>
+
+<section id="inicio">
+  <h1>SDE Padel Tour 2026</h1>
+  <p>Seguí cada torneo, consultá el ranking en tiempo real y reviví los mejores momentos.</p>
+  <div class="counters">
+    <div><div class="counter-number" id="torneosCount">0</div>Torneos</div>
+    <div><div class="counter-number" id="jugadoresCount">0</div>Jugadores</div>
+  </div>
+</section>
+
+<section id="torneos">
+  <h2>Próximos Torneos</h2>
+  <ul id="listaTorneos"></ul>
+</section>
+
+<section id="ranking">
+  <h2>Ranking</h2>
+  <div id="rankingContainer"></div>
+</section>
+
+<section id="sponsors">
+  <h2>Sponsors</h2>
+  <div id="logosSponsors"></div>
+  <p>Subí aquí los logos de tus sponsors.</p>
+</section>
+
+<script>
+const jsonFile = 'ranking_padeltour.json';
+const torneos = [
+  {nombre:"Torneo Enero", fecha:"2026-01-15"},
+  {nombre:"Torneo Febrero", fecha:"2026-02-20"}
+];
+const sponsors = [
+  {nombre:"Molins Sport", logo:"https://via.placeholder.com/100x50?text=Molins"}
+];
+function mostrarTorneos(){
+  const ul = document.getElementById("listaTorneos");
+  ul.innerHTML = '';
+  torneos.forEach(t => {
+    const li = document.createElement("li");
+    li.textContent = `${t.nombre} - ${t.fecha}`;
+    ul.appendChild(li);
+  });
+  document.getElementById("torneosCount").textContent = torneos.length;
+}
+function mostrarSponsors(){
+  const div = document.getElementById("logosSponsors");
+  div.innerHTML = '';
+  sponsors.forEach(s => {
+    const logoDiv = document.createElement("div");
+    const img = document.createElement("img");
+    img.src = s.logo;
+    img.alt = s.nombre;
+    logoDiv.appendChild(img);
+    div.appendChild(logoDiv);
+  });
+}
+function mostrarRanking(data){
+  const container = document.getElementById("rankingContainer");
+  container.innerHTML = '';
+  let totalJugadores = 0;
+  for(const categoria in data){
+    totalJugadores += data[categoria].length;
+    const h3 = document.createElement("h3");
+    h3.textContent = categoria;
+    container.appendChild(h3);
+    const table = document.createElement("table");
+    const thead = document.createElement("thead");
+    thead.innerHTML = '<tr><th>Jugador</th><th>Puntos</th></tr>';
+    table.appendChild(thead);
+    const tbody = document.createElement("tbody");
+    data[categoria].sort((a,b)=>b.Puntos-a.Puntos).forEach(j => {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `<td>${j.Jugador}</td><td>${j.Puntos}</td>`;
+      tbody.appendChild(tr);
+    });
+    table.appendChild(tbody);
+    container.appendChild(table);
+  }
+  document.getElementById("jugadoresCount").textContent = totalJugadores;
+}
+fetch(jsonFile)
+  .then(resp => resp.json())
+  .then(data => mostrarRanking(data))
+  .catch(err => console.error("Error cargando ranking:", err));
+mostrarTorneos();
+mostrarSponsors();
+</script>
+
+</body>
+</html>

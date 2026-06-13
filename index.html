@@ -337,8 +337,8 @@ footer { background: #050505; border-top: 2px solid var(--rojo); padding: 48px 4
 
 <script>
 const torneos = [
-    { nombre: "Torneo 1", fecha: "10 AL 12 DE ABRIL 2026", jugadores: 12 },
-    { nombre: "Torneo 2", fecha: "05 AL 07 DE JUNIO 2026", jugadores: 16 },
+    { nombre: "Torneo 1", fecha: "10 AL 12 DE ABRIL 2026", jugadores: 64,  categorias: 2 },
+    { nombre: "Torneo 2", fecha: "05 AL 07 DE JUNIO 2026", jugadores: 138, categorias: 4 },
 ];
 
 const ranking = {
@@ -536,11 +536,12 @@ torneos.forEach((t, i) => {
     const card = document.createElement('div');
     card.className = 'torneo-card fade-up';
     card.innerHTML = `
-        <div class="torneo-num">0${i+1}</div>
+        <div class="torneo-num">0${i + 1}</div>
         <div class="torneo-nombre">${t.nombre}</div>
         <div class="torneo-info">
             <span>Fecha · <strong>${t.fecha}</strong></span>
             <span>Jugadores · <strong>${t.jugadores}</strong></span>
+            <span>Categorías · <strong>${t.categorias}</strong></span>
         </div>`;
     grid.appendChild(card);
 });
@@ -557,11 +558,9 @@ function animateCount(el, target, duration = 1500) {
     }, 16);
 }
 
-// Disparar el contador del hero al cargar la página
+// Disparar contador del hero al cargar
 window.addEventListener('DOMContentLoaded', () => {
-    setTimeout(() => {
-        animateCount(document.getElementById('stat-jugadores'), totalJugadores);
-    }, 400);
+    setTimeout(() => animateCount(document.getElementById('stat-jugadores'), totalJugadores), 400);
 });
 
 // Ranking

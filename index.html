@@ -8,7 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
 
 <style>
-/* ── Variables ── */
 :root {
     --rojo:    #E8001C;
     --celeste: #00D4FF;
@@ -18,8 +17,6 @@
     --fondo3:  #111111;
     --gris:    #1A1A1A;
 }
-
-/* ── Reset & Base ── */
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior: smooth; }
 body {
@@ -32,72 +29,41 @@ body {
 }
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
-
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--fondo); }
 ::-webkit-scrollbar-thumb { background: var(--rojo); border-radius: 3px; }
 
-/* ═══════════════════════════════════════
-   NAV
-═══════════════════════════════════════ */
+/* NAV */
 nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 40px;
-    height: 64px;
-    background: rgba(0,0,0,0.85);
-    backdrop-filter: blur(12px);
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 40px; height: 64px;
+    background: rgba(0,0,0,0.85); backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(232,0,28,0.35);
 }
-.nav-logo {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.6rem;
-    letter-spacing: 0.1em;
-}
+.nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 0.1em; }
 .nav-logo span { color: var(--rojo); }
 .nav-links { display: flex; gap: 32px; }
 .nav-links a {
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    color: rgba(255,255,255,0.7);
-    transition: color 0.25s;
-    position: relative;
-    padding-bottom: 4px;
+    font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em;
+    color: rgba(255,255,255,0.7); transition: color 0.25s;
+    position: relative; padding-bottom: 4px;
 }
 .nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0;
-    width: 0; height: 2px;
-    background: var(--celeste);
-    transition: width 0.3s;
+    content: ''; position: absolute; bottom: 0; left: 0;
+    width: 0; height: 2px; background: var(--celeste); transition: width 0.3s;
 }
 .nav-links a:hover { color: var(--celeste); }
 .nav-links a:hover::after { width: 100%; }
 
-/* ═══════════════════════════════════════
-   HERO
-═══════════════════════════════════════ */
+/* HERO */
 #inicio {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    position: relative;
-    padding: 80px 20px 60px;
-    overflow: hidden;
+    min-height: 100vh; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; text-align: center;
+    position: relative; padding: 80px 20px 60px; overflow: hidden;
 }
 #inicio::before {
-    content: '';
-    position: absolute;
-    inset: 0;
+    content: ''; position: absolute; inset: 0;
     background:
         radial-gradient(ellipse 70% 60% at 50% 40%, rgba(232,0,28,0.12) 0%, transparent 70%),
         radial-gradient(ellipse 50% 40% at 80% 80%, rgba(0,212,255,0.08) 0%, transparent 60%),
@@ -105,418 +71,158 @@ nav {
         repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(255,255,255,0.03) 60px);
     pointer-events: none;
 }
-
-/* Logo organización */
 .hero-org-logo {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
+    width: 140px; height: 140px; border-radius: 50%;
     border: 2px solid rgba(232,0,28,0.5);
     box-shadow: 0 0 30px rgba(232,0,28,0.2), 0 0 60px rgba(0,212,255,0.08);
-    overflow: hidden;
-    margin-bottom: 24px;
-    position: relative;
-    background: var(--gris);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: box-shadow 0.3s;
+    overflow: hidden; margin-bottom: 24px;
+    background: var(--gris); display: flex; align-items: center; justify-content: center;
+    transition: box-shadow 0.3s; position: relative;
 }
-.hero-org-logo:hover {
-    box-shadow: 0 0 40px rgba(232,0,28,0.35), 0 0 80px rgba(0,212,255,0.12);
-}
+.hero-org-logo:hover { box-shadow: 0 0 40px rgba(232,0,28,0.35), 0 0 80px rgba(0,212,255,0.12); }
 .hero-org-logo img { width: 100%; height: 100%; object-fit: cover; }
 .logo-placeholder {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 0.75rem;
-    letter-spacing: 0.18em;
-    color: rgba(255,255,255,0.2);
-    text-align: center;
-    padding: 10px;
+    font-family: 'Bebas Neue', sans-serif; font-size: 0.75rem;
+    letter-spacing: 0.18em; color: rgba(255,255,255,0.2); text-align: center; padding: 10px;
 }
-
 .hero-tag {
-    display: inline-block;
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 0.25em;
-    color: var(--celeste);
-    border: 1px solid rgba(0,212,255,0.4);
-    padding: 6px 18px;
-    border-radius: 2px;
-    margin-bottom: 28px;
-    position: relative;
+    display: inline-block; font-size: 0.65rem; font-weight: 700;
+    letter-spacing: 0.25em; color: var(--celeste);
+    border: 1px solid rgba(0,212,255,0.4); padding: 6px 18px;
+    border-radius: 2px; margin-bottom: 28px; position: relative;
 }
 .hero-title {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(4rem, 12vw, 9rem);
-    line-height: 0.9;
-    letter-spacing: 0.06em;
-    position: relative;
-    margin-bottom: 10px;
+    font-size: clamp(4rem, 12vw, 9rem); line-height: 0.9;
+    letter-spacing: 0.06em; position: relative; margin-bottom: 10px;
 }
 .hero-title .line-rojo { color: var(--rojo); display: block; }
-.hero-title .line-celeste {
-    color: transparent;
-    -webkit-text-stroke: 2px var(--celeste);
-    display: block;
-}
+.hero-title .line-celeste { color: transparent; -webkit-text-stroke: 2px var(--celeste); display: block; }
 .hero-subtitle {
-    font-size: clamp(0.7rem, 1.5vw, 0.9rem);
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    color: rgba(255,255,255,0.55);
-    margin-bottom: 48px;
-    position: relative;
+    font-size: clamp(0.7rem, 1.5vw, 0.9rem); font-weight: 600;
+    letter-spacing: 0.2em; color: rgba(255,255,255,0.55); margin-bottom: 48px;
 }
 .hero-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    padding: 16px 40px;
-    background: var(--rojo);
-    color: var(--blanco);
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.18em;
+    display: inline-flex; align-items: center; gap: 12px;
+    padding: 16px 40px; background: var(--rojo); color: var(--blanco);
+    font-size: 0.75rem; font-weight: 700; letter-spacing: 0.18em;
     border: 2px solid var(--rojo);
     clip-path: polygon(12px 0%, 100% 0%, calc(100% - 12px) 100%, 0% 100%);
-    transition: background 0.3s, color 0.3s;
-    cursor: pointer;
+    transition: background 0.3s, color 0.3s; cursor: pointer;
 }
 .hero-cta:hover { background: transparent; color: var(--rojo); }
 .hero-line {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 3px;
+    position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
     background: linear-gradient(90deg, transparent, var(--rojo) 40%, var(--celeste) 60%, transparent);
 }
-.hero-stats {
-    display: flex;
-    gap: 60px;
-    margin-top: 64px;
-    position: relative;
-}
+.hero-stats { display: flex; gap: 60px; margin-top: 64px; position: relative; }
 .stat-item { text-align: center; }
-.stat-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2.8rem;
-    color: var(--celeste);
-    line-height: 1;
-}
-.stat-label {
-    font-size: 0.6rem;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-    color: rgba(255,255,255,0.4);
-    margin-top: 4px;
-}
+.stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 2.8rem; color: var(--celeste); line-height: 1; }
+.stat-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.18em; color: rgba(255,255,255,0.4); margin-top: 4px; }
 
-/* ═══════════════════════════════════════
-   SECCIÓN BASE
-═══════════════════════════════════════ */
+/* SECCIÓN BASE */
 .section { padding: 100px 40px; position: relative; }
 .section-header { text-align: center; margin-bottom: 60px; }
-.section-tag {
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 0.25em;
-    color: var(--celeste);
-    margin-bottom: 12px;
-    display: block;
-}
-.section-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-    letter-spacing: 0.08em;
-    line-height: 1;
-    color: var(--blanco);
-}
+.section-tag { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.25em; color: var(--celeste); margin-bottom: 12px; display: block; }
+.section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem, 6vw, 4.5rem); letter-spacing: 0.08em; line-height: 1; }
 .section-title span { color: var(--rojo); }
-.divider {
-    width: 60px;
-    height: 3px;
-    background: linear-gradient(90deg, var(--rojo), var(--celeste));
-    margin: 20px auto 0;
-    border-radius: 2px;
-}
+.divider { width: 60px; height: 3px; background: linear-gradient(90deg, var(--rojo), var(--celeste)); margin: 20px auto 0; border-radius: 2px; }
 
-/* ═══════════════════════════════════════
-   TORNEOS
-═══════════════════════════════════════ */
+/* TORNEOS */
 #torneos { background: var(--fondo2); }
-.torneos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    max-width: 1100px;
-    margin: 0 auto 50px;
-}
+.torneos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1100px; margin: 0 auto 50px; }
 .torneo-card {
-    background: var(--gris);
-    border: 1px solid rgba(255,255,255,0.07);
-    border-top: 3px solid var(--rojo);
-    padding: 30px 28px;
+    background: var(--gris); border: 1px solid rgba(255,255,255,0.07);
+    border-top: 3px solid var(--rojo); padding: 30px 28px;
     transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
-    position: relative;
-    overflow: hidden;
+    position: relative; overflow: hidden;
 }
 .torneo-card::before {
-    content: '';
-    position: absolute;
-    top: 0; right: 0;
-    width: 80px; height: 80px;
+    content: ''; position: absolute; top: 0; right: 0; width: 80px; height: 80px;
     background: radial-gradient(circle at top right, rgba(0,212,255,0.08), transparent 70%);
 }
-.torneo-card:hover {
-    transform: translateY(-6px);
-    border-color: var(--celeste);
-    box-shadow: 0 12px 40px rgba(0,212,255,0.1);
-}
+.torneo-card:hover { transform: translateY(-6px); border-color: var(--celeste); box-shadow: 0 12px 40px rgba(0,212,255,0.1); }
 .torneo-card:hover .torneo-num { color: var(--celeste); }
-.torneo-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 3.5rem;
-    color: rgba(232,0,28,0.2);
-    line-height: 1;
-    transition: color 0.3s;
-    margin-bottom: 8px;
-}
-.torneo-nombre {
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    margin-bottom: 16px;
-}
+.torneo-num { font-family: 'Bebas Neue', sans-serif; font-size: 3.5rem; color: rgba(232,0,28,0.2); line-height: 1; transition: color 0.3s; margin-bottom: 8px; }
+.torneo-nombre { font-size: 0.85rem; font-weight: 700; letter-spacing: 0.1em; margin-bottom: 16px; }
 .torneo-info { display: flex; flex-direction: column; gap: 6px; }
-.torneo-info span {
-    font-size: 0.65rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    color: rgba(255,255,255,0.45);
-}
+.torneo-info span { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; color: rgba(255,255,255,0.45); }
 .torneo-info span strong { color: rgba(255,255,255,0.85); }
-
-/* Contador total */
 .counter-box {
-    text-align: center;
-    padding: 40px;
-    background: var(--gris);
-    border: 1px solid rgba(255,255,255,0.07);
-    max-width: 320px;
-    margin: 0 auto;
+    text-align: center; padding: 40px; background: var(--gris);
+    border: 1px solid rgba(255,255,255,0.07); max-width: 320px; margin: 0 auto;
 }
-.counter-label {
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    color: rgba(255,255,255,0.45);
-    margin-bottom: 12px;
-}
-.counter-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 4rem;
-    color: var(--rojo);
-    line-height: 1;
-}
+.counter-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; color: rgba(255,255,255,0.45); margin-bottom: 12px; }
+.counter-num { font-family: 'Bebas Neue', sans-serif; font-size: 4rem; color: var(--rojo); line-height: 1; }
 
-/* ═══════════════════════════════════════
-   RANKING
-═══════════════════════════════════════ */
+/* RANKING */
 #ranking { background: var(--fondo3); }
-
-/* Pestañas */
-.tabs-nav {
-    display: flex;
-    justify-content: center;
-    gap: 6px;
-    margin-bottom: 36px;
-    flex-wrap: wrap;
-}
+.tabs-nav { display: flex; justify-content: center; gap: 6px; margin-bottom: 36px; flex-wrap: wrap; }
 .tab-btn {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    padding: 10px 28px;
-    background: transparent;
-    color: rgba(255,255,255,0.4);
-    border: 1px solid rgba(255,255,255,0.12);
-    cursor: pointer;
-    transition: all 0.25s;
+    font-family: 'Montserrat', sans-serif; font-size: 0.7rem; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase; padding: 10px 28px;
+    background: transparent; color: rgba(255,255,255,0.4);
+    border: 1px solid rgba(255,255,255,0.12); cursor: pointer; transition: all 0.25s;
     clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
 }
 .tab-btn:hover { color: var(--blanco); border-color: rgba(255,255,255,0.3); }
 .tab-btn.active { background: var(--rojo); color: var(--blanco); border-color: var(--rojo); }
-
 .tab-panel { display: none; max-width: 800px; margin: 0 auto; overflow-x: auto; }
 .tab-panel.active { display: block; }
-
-.ranking-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.75rem;
-    letter-spacing: 0.08em;
-}
-.ranking-table thead tr {
-    background: rgba(232,0,28,0.15);
-    border-bottom: 2px solid var(--rojo);
-}
-.ranking-table th {
-    padding: 14px 20px;
-    text-align: left;
-    font-size: 0.62rem;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-    color: var(--rojo);
-}
-.ranking-table td {
-    padding: 14px 20px;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-    color: rgba(255,255,255,0.8);
-    font-weight: 600;
-}
+.ranking-table { width: 100%; border-collapse: collapse; font-size: 0.75rem; letter-spacing: 0.08em; }
+.ranking-table thead tr { background: rgba(232,0,28,0.15); border-bottom: 2px solid var(--rojo); }
+.ranking-table th { padding: 14px 20px; text-align: left; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; color: var(--rojo); }
+.ranking-table td { padding: 14px 20px; border-bottom: 1px solid rgba(255,255,255,0.05); color: rgba(255,255,255,0.8); font-weight: 600; }
 .ranking-table tbody tr:hover { background: rgba(0,212,255,0.04); }
-.rank-pos {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.3rem;
-    color: rgba(255,255,255,0.25);
-}
+.rank-pos { font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; color: rgba(255,255,255,0.25); }
 .rank-pos.top1 { color: var(--rojo); }
 .rank-pos.top2 { color: rgba(255,255,255,0.6); }
 .rank-pos.top3 { color: rgba(232,150,0,0.8); }
-.rank-pts {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.2rem;
-    color: var(--celeste);
-}
+.rank-pts { font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; color: var(--celeste); }
 .ranking-empty {
-    text-align: center;
-    padding: 60px 20px;
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    color: rgba(255,255,255,0.2);
-    border: 1px dashed rgba(255,255,255,0.08);
+    text-align: center; padding: 60px 20px; font-size: 0.65rem; font-weight: 700;
+    letter-spacing: 0.2em; color: rgba(255,255,255,0.2); border: 1px dashed rgba(255,255,255,0.08);
 }
-.ranking-empty span {
-    display: block;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2rem;
-    color: rgba(255,255,255,0.08);
-    margin-bottom: 10px;
-}
-.ranking-note {
-    text-align: center;
-    margin-top: 24px;
-    font-size: 0.62rem;
-    letter-spacing: 0.15em;
-    color: rgba(255,255,255,0.3);
-}
+.ranking-empty span { display: block; font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: rgba(255,255,255,0.08); margin-bottom: 10px; }
+.ranking-note { text-align: center; margin-top: 24px; font-size: 0.62rem; letter-spacing: 0.15em; color: rgba(255,255,255,0.3); }
 
-/* ═══════════════════════════════════════
-   SPONSORS
-═══════════════════════════════════════ */
+/* SPONSORS */
 #sponsors { background: var(--fondo2); }
 .slider-wrap { overflow: hidden; position: relative; padding: 10px 0; }
-.slider-wrap::before,
-.slider-wrap::after {
-    content: '';
-    position: absolute;
-    top: 0; bottom: 0;
-    width: 120px;
-    z-index: 2;
-    pointer-events: none;
+.slider-wrap::before, .slider-wrap::after {
+    content: ''; position: absolute; top: 0; bottom: 0; width: 120px; z-index: 2; pointer-events: none;
 }
 .slider-wrap::before { left: 0;  background: linear-gradient(90deg, var(--fondo2), transparent); }
 .slider-wrap::after  { right: 0; background: linear-gradient(-90deg, var(--fondo2), transparent); }
-.slider-track {
-    display: flex;
-    gap: 50px;
-    width: max-content;
-    animation: marquee 20s linear infinite;
-}
+.slider-track { display: flex; gap: 50px; width: max-content; animation: marquee 20s linear infinite; }
 .slider-track:hover { animation-play-state: paused; }
 .sponsor-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 180px;
-    height: 80px;
-    background: var(--gris);
-    border: 1px solid rgba(255,255,255,0.07);
-    border-radius: 4px;
-    padding: 12px 20px;
-    flex-shrink: 0;
-    transition: border-color 0.3s;
+    display: flex; align-items: center; justify-content: center;
+    width: 180px; height: 80px; background: var(--gris);
+    border: 1px solid rgba(255,255,255,0.07); border-radius: 4px;
+    padding: 12px 20px; flex-shrink: 0; transition: border-color 0.3s;
 }
 .sponsor-item:hover { border-color: rgba(0,212,255,0.4); }
-.sponsor-item img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    filter: brightness(0.6) grayscale(1);
-    transition: filter 0.3s;
-}
+.sponsor-item img { max-width: 100%; max-height: 100%; object-fit: contain; filter: brightness(0.6) grayscale(1); transition: filter 0.3s; }
 .sponsor-item:hover img { filter: brightness(1) grayscale(0); }
-.sponsor-placeholder {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1rem;
-    letter-spacing: 0.15em;
-    color: rgba(255,255,255,0.2);
-}
-@keyframes marquee {
-    0%   { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-}
+.sponsor-placeholder { font-family: 'Bebas Neue', sans-serif; font-size: 1rem; letter-spacing: 0.15em; color: rgba(255,255,255,0.2); }
+@keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-/* ═══════════════════════════════════════
-   FOOTER
-═══════════════════════════════════════ */
-footer {
-    background: #050505;
-    border-top: 2px solid var(--rojo);
-    padding: 48px 40px 32px;
-    text-align: center;
-}
-.footer-logo {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2.2rem;
-    letter-spacing: 0.1em;
-    margin-bottom: 20px;
-}
+/* FOOTER */
+footer { background: #050505; border-top: 2px solid var(--rojo); padding: 48px 40px 32px; text-align: center; }
+.footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 2.2rem; letter-spacing: 0.1em; margin-bottom: 20px; }
 .footer-logo span { color: var(--rojo); }
-.footer-nav {
-    display: flex;
-    justify-content: center;
-    gap: 28px;
-    margin-bottom: 28px;
-}
-.footer-nav a {
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    color: rgba(255,255,255,0.4);
-    transition: color 0.25s;
-}
+.footer-nav { display: flex; justify-content: center; gap: 28px; margin-bottom: 28px; }
+.footer-nav a { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; color: rgba(255,255,255,0.4); transition: color 0.25s; }
 .footer-nav a:hover { color: var(--celeste); }
 .footer-line { width: 100%; height: 1px; background: rgba(255,255,255,0.06); margin-bottom: 24px; }
 .footer-copy { font-size: 0.6rem; letter-spacing: 0.2em; color: rgba(255,255,255,0.25); }
 
-/* ═══════════════════════════════════════
-   ANIMACIONES
-═══════════════════════════════════════ */
-.fade-up {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
+/* ANIMACIONES */
+.fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
 .fade-up.visible { opacity: 1; transform: translateY(0); }
 
-/* ═══════════════════════════════════════
-   RESPONSIVE
-═══════════════════════════════════════ */
+/* RESPONSIVE */
 @media (max-width: 768px) {
     nav { padding: 0 20px; }
     .nav-links { gap: 18px; }
@@ -537,7 +243,7 @@ footer {
 </head>
 <body>
 
-<!-- ═══ NAV ═══ -->
+<!-- NAV -->
 <nav>
     <div class="nav-logo">SDE <span>PÁDEL</span> TOUR</div>
     <ul class="nav-links">
@@ -548,15 +254,13 @@ footer {
     </ul>
 </nav>
 
-<!-- ═══ HERO ═══ -->
+<!-- HERO -->
 <section id="inicio">
-    <!-- Logo: subí "logo-organizacion.png" a la misma carpeta en GitHub -->
     <div class="hero-org-logo">
-        <img src="logo-organizacion.png" alt="SDE Pádel Tour"
+        <img src="logo-organizacion.png.png" alt="SDE Pádel Tour"
              onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
-        <span class="logo-placeholder" style="display:none">Tu Logo</span>
+        <span class="logo-placeholder" style="display:none">SDE</span>
     </div>
-
     <span class="hero-tag">Temporada 2026</span>
     <h1 class="hero-title">
         <span class="line-rojo">SDE PÁDEL</span>
@@ -564,7 +268,6 @@ footer {
     </h1>
     <p class="hero-subtitle">Competencia · Ranking · Pasión por el Pádel</p>
     <a class="hero-cta" href="#torneos">Ver Torneos</a>
-
     <div class="hero-stats fade-up">
         <div class="stat-item">
             <div class="stat-num">2</div>
@@ -579,34 +282,30 @@ footer {
             <div class="stat-label">Categorías</div>
         </div>
     </div>
-
     <div class="hero-line"></div>
 </section>
 
-<!-- ═══ TORNEOS ═══ -->
+<!-- TORNEOS -->
 <section id="torneos" class="section">
     <div class="section-header fade-up">
         <span class="section-tag">Calendario</span>
         <h2 class="section-title">Torneos <span>Realizados</span></h2>
         <div class="divider"></div>
     </div>
-
     <div class="torneos-grid" id="torneos-grid"></div>
-
     <div class="counter-box fade-up">
         <div class="counter-label">Total de Jugadores en el Ranking</div>
         <div class="counter-num" id="total-jugadores">0</div>
     </div>
 </section>
 
-<!-- ═══ RANKING ═══ -->
+<!-- RANKING -->
 <section id="ranking" class="section">
     <div class="section-header fade-up">
         <span class="section-tag">Temporada 2026</span>
         <h2 class="section-title">Tabla de <span>Ranking</span></h2>
         <div class="divider"></div>
     </div>
-
     <div class="fade-up">
         <div class="tabs-nav" id="tabs-nav">
             <button class="tab-btn active" data-cat="4ta">4ta Categoría</button>
@@ -614,47 +313,38 @@ footer {
             <button class="tab-btn" data-cat="6ta">6ta Categoría</button>
             <button class="tab-btn" data-cat="7ma">7ma Categoría</button>
         </div>
-
         <div class="tab-panel active" id="panel-4ta">
-            <table class="ranking-table">
-                <thead><tr><th>#</th><th>Jugador</th><th>Pts</th></tr></thead>
-                <tbody id="body-4ta"></tbody>
-            </table>
+            <table class="ranking-table"><thead><tr><th>#</th><th>Jugador</th><th>Pts</th></tr></thead><tbody id="body-4ta"></tbody></table>
             <p class="ranking-note">* Ranking actualizado al cierre de cada torneo</p>
         </div>
-
         <div class="tab-panel" id="panel-5ta">
-            <table class="ranking-table">
-                <thead><tr><th>#</th><th>Jugador</th><th>Pts</th></tr></thead>
-                <tbody id="body-5ta"></tbody>
-            </table>
+            <table class="ranking-table"><thead><tr><th>#</th><th>Jugador</th><th>Pts</th></tr></thead><tbody id="body-5ta"></tbody></table>
             <p class="ranking-note">* Ranking actualizado al cierre de cada torneo</p>
         </div>
-
         <div class="tab-panel" id="panel-6ta">
-            <div class="ranking-empty"><span>—</span>Próximamente</div>
+            <table class="ranking-table"><thead><tr><th>#</th><th>Jugador</th><th>Pts</th></tr></thead><tbody id="body-6ta"></tbody></table>
+            <p class="ranking-note">* Ranking actualizado al cierre de cada torneo</p>
         </div>
-
         <div class="tab-panel" id="panel-7ma">
-            <div class="ranking-empty"><span>—</span>Próximamente</div>
+            <table class="ranking-table"><thead><tr><th>#</th><th>Jugador</th><th>Pts</th></tr></thead><tbody id="body-7ma"></tbody></table>
+            <p class="ranking-note">* Ranking actualizado al cierre de cada torneo</p>
         </div>
     </div>
 </section>
 
-<!-- ═══ SPONSORS ═══ -->
+<!-- SPONSORS -->
 <section id="sponsors" class="section">
     <div class="section-header fade-up">
         <span class="section-tag">Nuestros Auspiciantes</span>
         <h2 class="section-title"><span>Sponsors</span></h2>
         <div class="divider"></div>
     </div>
-
     <div class="slider-wrap fade-up">
         <div class="slider-track" id="slider-track"></div>
     </div>
 </section>
 
-<!-- ═══ FOOTER ═══ -->
+<!-- FOOTER -->
 <footer>
     <div class="footer-logo">SDE <span>PÁDEL</span> TOUR</div>
     <nav class="footer-nav">
@@ -667,7 +357,6 @@ footer {
     <p class="footer-copy">© 2026 SDE PÁDEL TOUR · Todos los derechos reservados</p>
 </footer>
 
-<!-- ═══ SCRIPTS ═══ -->
 <script>
 // ══════════════════════════════════════════════
 // DATOS — editá solo esta sección
@@ -678,30 +367,201 @@ const torneos = [
     { nombre: "Torneo 2", fecha: "05 AL 07 DE JUNIO 2026",  jugadores: 16 },
 ];
 
-// Ranking por categoría: agregá jugadores con { jugador: "Nombre", pts: 000 }
+// Ranking por categoría
 const ranking = {
     "4ta": [
-        // { jugador: "Nombre Apellido", pts: 320 },
+        { jugador: "ADOLFO BOLOMO", pts: 1050 },
+        { jugador: "LAUTARO SALVI", pts: 1000 },
+        { jugador: "EMANUEL GOMEZ", pts: 700 },
+        { jugador: "SANTIAGO LOPEZ", pts: 700 },
+        { jugador: "DANIEL ACUÑA", pts: 450 },
+        { jugador: "TOMAS PEREYRA", pts: 450 },
+        { jugador: "NICOLAS PAZ", pts: 450 },
+        { jugador: "JOAQUIN FERNANDEZ", pts: 450 },
+        { jugador: "MARIANO WITTE", pts: 250 },
+        { jugador: "IVAN CARDOZO", pts: 250 },
+        { jugador: "GONZALO NAZARIO", pts: 250 },
+        { jugador: "NICOLAS ARAUJO", pts: 250 },
+        { jugador: "FABIAN MORENO", pts: 250 },
+        { jugador: "JORGE PAZ", pts: 250 },
+        { jugador: "JUAN MAIDANA", pts: 50 },
+        { jugador: "LEZANA", pts: 50 },
+        { jugador: "FACUNDO SANTILLAN", pts: 50 },
+        { jugador: "JUNIOR SALVATIERRA", pts: 50 },
+        { jugador: "DANIEL SICILIA", pts: 50 },
+        { jugador: "CRISTIAN CONCA", pts: 50 },
+        { jugador: "MAURO TABOADA", pts: 50 },
+        { jugador: "MARTIN SOLIVELLAS", pts: 50 },
+        { jugador: "KARIME EBERLE", pts: 50 },
+        { jugador: "PIO MONTENEGRO", pts: 50 },
     ],
     "5ta": [
-        // { jugador: "Nombre Apellido", pts: 280 },
+        { jugador: "JORGE LOPEZ SAAD", pts: 1050 },
+        { jugador: "OMAR VELIZ", pts: 1000 },
+        { jugador: "NOELIA LLUGDAR", pts: 700 },
+        { jugador: "PABLO ALAIMO", pts: 700 },
+        { jugador: "EMILIO DIAZ", pts: 450 },
+        { jugador: "EMANUEL GARNICA", pts: 450 },
+        { jugador: "RAUL ARIAS", pts: 450 },
+        { jugador: "JESUS DAHER", pts: 450 },
+        { jugador: "GUSTAVO RATIER", pts: 250 },
+        { jugador: "SANTIAGO MULKI", pts: 250 },
+        { jugador: "PABLO ALARCON", pts: 250 },
+        { jugador: "ALEJANDRO RUIZ", pts: 250 },
+        { jugador: "LUCAS MAGUNA", pts: 250 },
+        { jugador: "IGNACIO ROJAS", pts: 250 },
+        { jugador: "REMO TERZANO", pts: 250 },
+        { jugador: "RAUL VILLAVICENCIO", pts: 250 },
+        { jugador: "EMANUEL MILET", pts: 150 },
+        { jugador: "ANDRES MONTENEGRO", pts: 150 },
+        { jugador: "EMILIO PAEZ", pts: 150 },
+        { jugador: "PABLO BARROS", pts: 150 },
+        { jugador: "FERNANDO ZAMBOLIN", pts: 50 },
+        { jugador: "LUIS MORALES", pts: 50 },
+        { jugador: "MAIA KORMAN", pts: 50 },
+        { jugador: "WALTER PEREZ", pts: 50 },
+        { jugador: "ALDANA RUIZ", pts: 50 },
+        { jugador: "MARTIN TORRES", pts: 50 },
+        { jugador: "MARCELO LUCATELLI", pts: 50 },
+        { jugador: "GONZALO HERNAN", pts: 50 },
+        { jugador: "CARLOS SANCHEZ", pts: 50 },
+        { jugador: "NICOLAS CARRASCO", pts: 50 },
+    ],
+    "6ta": [
+        { jugador: "GONZALO LLAVAR", pts: 1450 },
+        { jugador: "FABIAN CAMPOS", pts: 1050 },
+        { jugador: "GABRIEL LLAVAR", pts: 1050 },
+        { jugador: "GABRIEL CAMPOS", pts: 1000 },
+        { jugador: "IGNACIO LASCA", pts: 900 },
+        { jugador: "SEBASTIAN SCAGLIONE", pts: 750 },
+        { jugador: "FACUNDO GRECO", pts: 700 },
+        { jugador: "JORGE CORONEL", pts: 700 },
+        { jugador: "NICOLAS PAZ", pts: 700 },
+        { jugador: "DIEGO PALOMO", pts: 500 },
+        { jugador: "OSCAR CARABAJAL", pts: 500 },
+        { jugador: "AGUSTIN VERGOTTINI", pts: 450 },
+        { jugador: "JEREMIAS NUNO", pts: 450 },
+        { jugador: "JOSE ARROYO", pts: 450 },
+        { jugador: "JUAN KAPP", pts: 450 },
+        { jugador: "NICOLAS YUNES ICK", pts: 450 },
+        { jugador: "ANIBAL GIMENEZ", pts: 400 },
+        { jugador: "LUCAS ACUÑA", pts: 400 },
+        { jugador: "RAUL SAAD", pts: 400 },
+        { jugador: "FEDERICO GIMENEZ", pts: 300 },
+        { jugador: "AGUSTIN PONCE", pts: 250 },
+        { jugador: "BENJAMIN GULOTTA", pts: 250 },
+        { jugador: "ENZO LLUGDAR", pts: 250 },
+        { jugador: "GONZALO TORRES", pts: 250 },
+        { jugador: "HUGO CALDERA", pts: 250 },
+        { jugador: "IVAN NORIEGA", pts: 250 },
+        { jugador: "JULIO NOVARINI", pts: 250 },
+        { jugador: "LUCAS TORREZ", pts: 250 },
+        { jugador: "JOSE LODI", pts: 200 },
+        { jugador: "BENJAMIN BERNA", pts: 150 },
+        { jugador: "CARLOS CEJAS", pts: 150 },
+        { jugador: "ERNESTO RODRIGUEZ", pts: 150 },
+        { jugador: "GASTON RUIZ", pts: 150 },
+        { jugador: "HUGO RODRIGUEZ", pts: 150 },
+        { jugador: "JUAN ARIAS", pts: 150 },
+        { jugador: "JUAN GONZALEZ", pts: 150 },
+        { jugador: "JUAN PABLO JUAREZ", pts: 150 },
+        { jugador: "JULIAN GOMEZ", pts: 150 },
+        { jugador: "MARTIN BONACINA", pts: 150 },
+        { jugador: "MAXIMILIANO DIAZ", pts: 150 },
+        { jugador: "SANTIAGO LEONI", pts: 150 },
+        { jugador: "EMILIO PAEZ", pts: 100 },
+        { jugador: "GUILLERMO OLIVER", pts: 100 },
+        { jugador: "MAIA KORMAN", pts: 100 },
+        { jugador: "XIMENA JEREZ", pts: 100 },
+        { jugador: "PEDRO BASBUS TURK", pts: 100 },
+        { jugador: "ABEL YBAÑEZ", pts: 50 },
+        { jugador: "ALEJANDRO FAES", pts: 50 },
+        { jugador: "DIEGO BRAVO", pts: 50 },
+        { jugador: "EDUARDO KORMAN", pts: 50 },
+        { jugador: "FACUNDO BRAVO", pts: 50 },
+        { jugador: "GABRIEL YBAÑEZ", pts: 50 },
+        { jugador: "GIANI ROSALEN", pts: 50 },
+        { jugador: "JUAN PABLO NURI", pts: 50 },
+        { jugador: "JULIO ALBARRACIN", pts: 50 },
+        { jugador: "SEBASTIAN MAGUNA", pts: 50 },
+        { jugador: "VALENTIN RODRIGUEZ", pts: 50 },
+    ],
+    "7ma": [
+        { jugador: "GONZALO LLANOS", pts: 1500 },
+        { jugador: "JORGE NUÑEZ", pts: 1100 },
+        { jugador: "JOSE LOBOS", pts: 1050 },
+        { jugador: "RODOLFO ANGLADE", pts: 1000 },
+        { jugador: "EMANUEL GALLO", pts: 950 },
+        { jugador: "GUILLERMO BARROS", pts: 950 },
+        { jugador: "ALEJANDRO BULACIO", pts: 850 },
+        { jugador: "FACUNDO JURI", pts: 850 },
+        { jugador: "JAIR MATOS", pts: 500 },
+        { jugador: "JUAN CRUZ TIBERTI", pts: 500 },
+        { jugador: "ALEJO DIAZ", pts: 450 },
+        { jugador: "RUBEN RISSO", pts: 450 },
+        { jugador: "FEDERICO SANTINI", pts: 450 },
+        { jugador: "LEANDRO CASTAÑO", pts: 450 },
+        { jugador: "MARTIN BONACINA", pts: 450 },
+        { jugador: "MARTIN PEREYRA", pts: 450 },
+        { jugador: "SANTIAGO LEONI", pts: 450 },
+        { jugador: "ELIAS GONZALEZ NEME", pts: 300 },
+        { jugador: "EMMANUEL GEREZ", pts: 300 },
+        { jugador: "PEDRO LETURIA", pts: 300 },
+        { jugador: "FEDERICO ULLUA", pts: 250 },
+        { jugador: "FRANCO RABELLO", pts: 250 },
+        { jugador: "GABRIEL ACOSTA", pts: 250 },
+        { jugador: "IGNACIO BRAIA", pts: 250 },
+        { jugador: "JUAN MILET", pts: 250 },
+        { jugador: "LEO RISSO", pts: 250 },
+        { jugador: "LUCAS FERREYRA", pts: 250 },
+        { jugador: "LUCAS VELIZ", pts: 250 },
+        { jugador: "MIGUEL CAMPOS", pts: 250 },
+        { jugador: "ANTONIO RAMIREZ", pts: 200 },
+        { jugador: "GERMAN SOTELO", pts: 200 },
+        { jugador: "AGUSTIN VERGOTTINI", pts: 150 },
+        { jugador: "ANGEL GOMEZ", pts: 150 },
+        { jugador: "ARIEL MARTINETTI", pts: 150 },
+        { jugador: "CRISTIAN APESTEGUIA", pts: 150 },
+        { jugador: "FEDE RUIZ", pts: 150 },
+        { jugador: "FRANCO AVACA", pts: 150 },
+        { jugador: "GABRIEL MONTINHO", pts: 150 },
+        { jugador: "GUSTAVO CARABAJAL", pts: 150 },
+        { jugador: "LUIS CORDERO", pts: 150 },
+        { jugador: "MAURICIO QUIROGA", pts: 150 },
+        { jugador: "MAXI BOLAÑEZ", pts: 150 },
+        { jugador: "PABLO DON ABELLEIRA", pts: 150 },
+        { jugador: "AGUSTIN ALEGRE", pts: 100 },
+        { jugador: "PABLO LUNA", pts: 100 },
+        { jugador: "ALEJANDRO ROMUALDO", pts: 50 },
+        { jugador: "CRISTIAN CEREZO", pts: 50 },
+        { jugador: "ESTEBAN TAPIA", pts: 50 },
+        { jugador: "FERNANDO PAZ", pts: 50 },
+        { jugador: "JEREMIAS ORTIZ", pts: 50 },
+        { jugador: "JESUS DIAZ", pts: 50 },
+        { jugador: "JOSE TREJO", pts: 50 },
+        { jugador: "IGNACIO FIAD", pts: 50 },
+        { jugador: "LUCAS FERNANDEZ", pts: 50 },
+        { jugador: "LUIS MIRANDA", pts: 50 },
+        { jugador: "MARCOS QUINTEROS", pts: 50 },
+        { jugador: "NAHUEL MIGUEL", pts: 50 },
+        { jugador: "PABLO ABELLEIRA", pts: 50 },
+        { jugador: "SANTIAGO CATELLA", pts: 50 },
+        { jugador: "SOLEDAD JUGO", pts: 50 },
     ],
 };
 
-// Sponsors: subí logo1.png, logo2.png, logo3.png a la carpeta de GitHub
+// Sponsors — nombres exactos de los archivos en GitHub
 const sponsors = [
-    { nombre: "Sponsor 1", logo: "logo1.png" },
-    { nombre: "Sponsor 2", logo: "logo2.png" },
-    { nombre: "Sponsor 3", logo: "logo3.png" },
+    { nombre: "Sponsor 1", logo: "logo1.png.PNG" },
+    { nombre: "Sponsor 2", logo: "logo2.png.jpeg" },
+    { nombre: "Sponsor 3", logo: "logo3.png.png" },
 ];
 
 // ══════════════════════════════════════════════
 
-
-// ─── Total jugadores desde el ranking ────────
 const totalJugadores = Object.values(ranking).reduce((sum, cat) => sum + cat.length, 0);
 
-// ─── Torneos ─────────────────────────────────
+// Torneos
 const grid = document.getElementById('torneos-grid');
 torneos.forEach((t, i) => {
     const card = document.createElement('div');
@@ -712,12 +572,11 @@ torneos.forEach((t, i) => {
         <div class="torneo-info">
             <span>Fecha · <strong>${t.fecha}</strong></span>
             <span>Jugadores · <strong>${t.jugadores}</strong></span>
-        </div>
-    `;
+        </div>`;
     grid.appendChild(card);
 });
 
-// ─── Contador animado ─────────────────────────
+// Contador animado
 function animateCount(el, target, duration = 1500) {
     if (target === 0) { el.textContent = 0; return; }
     let start = 0;
@@ -729,9 +588,8 @@ function animateCount(el, target, duration = 1500) {
     }, 16);
 }
 
-// ─── Ranking con pestañas ─────────────────────
+// Ranking
 const posClass = ['top1','top2','top3'];
-
 function renderRanking(cat) {
     const data = ranking[cat] || [];
     const tbody = document.getElementById(`body-${cat}`);
@@ -746,14 +604,11 @@ function renderRanking(cat) {
         tr.innerHTML = `
             <td><span class="rank-pos ${posClass[i] || ''}">${i+1}</span></td>
             <td>${r.jugador.toUpperCase()}</td>
-            <td><span class="rank-pts">${r.pts}</span></td>
-        `;
+            <td><span class="rank-pts">${r.pts}</span></td>`;
         tbody.appendChild(tr);
     });
 }
-
-renderRanking('4ta');
-renderRanking('5ta');
+['4ta','5ta','6ta','7ma'].forEach(renderRanking);
 
 document.getElementById('tabs-nav').addEventListener('click', (e) => {
     const btn = e.target.closest('.tab-btn');
@@ -765,25 +620,23 @@ document.getElementById('tabs-nav').addEventListener('click', (e) => {
     document.getElementById(`panel-${cat}`).classList.add('active');
 });
 
-// ─── Sponsors slider ──────────────────────────
+// Sponsors
 const track = document.getElementById('slider-track');
 [...sponsors, ...sponsors].forEach(s => {
     const item = document.createElement('div');
     item.className = 'sponsor-item';
-    item.innerHTML = `
-        <img src="${s.logo}" alt="${s.nombre}"
-             onerror="this.style.display='none'; this.parentNode.innerHTML='<span class=\\'sponsor-placeholder\\'>${s.nombre.toUpperCase()}</span>'">
-    `;
+    item.innerHTML = `<img src="${s.logo}" alt="${s.nombre}"
+        onerror="this.style.display='none'; this.parentNode.innerHTML='<span class=\\'sponsor-placeholder\\'>${s.nombre.toUpperCase()}</span>'">`;
     track.appendChild(item);
 });
 
-// ─── Fade on scroll ───────────────────────────
+// Fade on scroll + contadores
 let counterFired = false;
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
         if (e.isIntersecting) {
             e.target.classList.add('visible');
-            if (!counterFired && (e.target.classList.contains('counter-box') || e.target.classList.contains('hero-stats'))) {
+            if (!counterFired && e.target.classList.contains('counter-box')) {
                 counterFired = true;
                 animateCount(document.getElementById('total-jugadores'), totalJugadores);
                 animateCount(document.getElementById('stat-jugadores'), totalJugadores);
@@ -791,7 +644,6 @@ const observer = new IntersectionObserver((entries) => {
         }
     });
 }, { threshold: 0.1 });
-
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 </script>
 

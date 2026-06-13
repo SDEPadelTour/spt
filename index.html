@@ -70,18 +70,18 @@ nav {
     pointer-events: none;
 }
 .hero-org-logo {
-    width: 160px; height: 160px; border-radius: 20px;
+    width: 150px; height: 150px; border-radius: 20px;
     border: 2px solid rgba(232,0,28,0.5);
     box-shadow: 0 0 30px rgba(232,0,28,0.2), 0 0 60px rgba(0,212,255,0.08);
-    overflow: hidden; margin-bottom: 28px;
-    background: #1a1a1a; display: flex; align-items: center; justify-content: center;
-    transition: box-shadow 0.3s; position: relative;
+    overflow: hidden; margin-bottom: 24px;
+    background: #111; display: flex; align-items: center; justify-content: center;
+    transition: box-shadow 0.3s;
 }
 .hero-org-logo:hover { box-shadow: 0 0 40px rgba(232,0,28,0.35), 0 0 80px rgba(0,212,255,0.12); }
 .hero-org-logo img { width: 100%; height: 100%; object-fit: contain; }
 .logo-placeholder {
-    font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem;
-    letter-spacing: 0.18em; color: rgba(255,255,255,0.3); text-align: center; padding: 10px;
+    font-family: 'Bebas Neue', sans-serif; font-size: 1rem;
+    letter-spacing: 0.18em; color: rgba(255,255,255,0.2); padding: 10px;
 }
 .hero-tag {
     display: inline-block; font-size: 0.65rem; font-weight: 700;
@@ -94,26 +94,17 @@ nav {
     font-size: clamp(4rem, 12vw, 9rem); line-height: 0.9;
     letter-spacing: 0.06em; margin-bottom: 10px;
 }
-.hero-title .line-rojo  { color: var(--rojo); display: block; }
+.hero-title .line-rojo   { color: var(--rojo); display: block; }
 .hero-title .line-celeste { color: transparent; -webkit-text-stroke: 2px var(--celeste); display: block; }
 .hero-subtitle {
-    font-size: clamp(0.7rem, 1.5vw, 0.9rem); font-weight: 600;
-    letter-spacing: 0.2em; color: rgba(255,255,255,0.55); margin-bottom: 48px;
+    font-size: clamp(0.62rem, 1.3vw, 0.8rem); font-weight: 600;
+    letter-spacing: 0.18em; color: rgba(255,255,255,0.5); margin-bottom: 48px;
 }
-.hero-cta {
-    display: inline-flex; align-items: center; gap: 12px;
-    padding: 16px 40px; background: var(--rojo); color: var(--blanco);
-    font-size: 0.75rem; font-weight: 700; letter-spacing: 0.18em;
-    border: 2px solid var(--rojo);
-    clip-path: polygon(12px 0%, 100% 0%, calc(100% - 12px) 100%, 0% 100%);
-    transition: background 0.3s, color 0.3s; cursor: pointer;
-}
-.hero-cta:hover { background: transparent; color: var(--rojo); }
 .hero-line {
     position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
     background: linear-gradient(90deg, transparent, var(--rojo) 40%, var(--celeste) 60%, transparent);
 }
-.hero-stats { display: flex; gap: 60px; margin-top: 64px; }
+.hero-stats { display: flex; gap: 60px; margin-top: 48px; }
 .stat-item { text-align: center; }
 .stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 2.8rem; color: var(--celeste); line-height: 1; }
 .stat-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.18em; color: rgba(255,255,255,0.4); margin-top: 4px; }
@@ -128,7 +119,7 @@ nav {
 
 /* TORNEOS */
 #torneos { background: var(--fondo2); }
-.torneos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1100px; margin: 0 auto 50px; }
+.torneos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1100px; margin: 0 auto; }
 .torneo-card {
     background: var(--gris); border: 1px solid rgba(255,255,255,0.07);
     border-top: 3px solid var(--rojo); padding: 30px 28px;
@@ -140,18 +131,12 @@ nav {
     background: radial-gradient(circle at top right, rgba(0,212,255,0.08), transparent 70%);
 }
 .torneo-card:hover { transform: translateY(-6px); border-color: var(--celeste); box-shadow: 0 12px 40px rgba(0,212,255,0.1); }
-.torneo-num { font-family: 'Bebas Neue', sans-serif; font-size: 3.5rem; color: rgba(232,0,28,0.2); line-height: 1; transition: color 0.3s; margin-bottom: 8px; }
 .torneo-card:hover .torneo-num { color: var(--celeste); }
+.torneo-num { font-family: 'Bebas Neue', sans-serif; font-size: 3.5rem; color: rgba(232,0,28,0.2); line-height: 1; transition: color 0.3s; margin-bottom: 8px; }
 .torneo-nombre { font-size: 0.85rem; font-weight: 700; letter-spacing: 0.1em; margin-bottom: 16px; }
 .torneo-info { display: flex; flex-direction: column; gap: 6px; }
 .torneo-info span { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; color: rgba(255,255,255,0.45); }
 .torneo-info span strong { color: rgba(255,255,255,0.85); }
-.counter-box {
-    text-align: center; padding: 40px; background: var(--gris);
-    border: 1px solid rgba(255,255,255,0.07); max-width: 320px; margin: 0 auto;
-}
-.counter-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; color: rgba(255,255,255,0.45); margin-bottom: 12px; }
-.counter-num { font-family: 'Bebas Neue', sans-serif; font-size: 4rem; color: var(--rojo); line-height: 1; }
 
 /* RANKING */
 #ranking { background: var(--fondo3); }
@@ -195,23 +180,14 @@ nav {
     background: #3A3A3A;
     border: 1px solid rgba(255,255,255,0.12);
     border-radius: 24px;
-    padding: 12px;
-    flex-shrink: 0;
+    padding: 12px; flex-shrink: 0;
     transition: border-color 0.3s, box-shadow 0.3s;
     overflow: hidden;
 }
-.sponsor-item:hover {
-    border-color: rgba(0,212,255,0.4);
-    box-shadow: 0 0 20px rgba(0,212,255,0.08);
-}
-.sponsor-item img {
-    width: 100%; height: 100%;
-    object-fit: contain;
-    filter: brightness(0.75) grayscale(0.3);
-    transition: filter 0.3s;
-}
+.sponsor-item:hover { border-color: rgba(0,212,255,0.4); box-shadow: 0 0 20px rgba(0,212,255,0.08); }
+.sponsor-item img { width: 100%; height: 100%; object-fit: contain; filter: brightness(0.75) grayscale(0.3); transition: filter 0.3s; }
 .sponsor-item:hover img { filter: brightness(1) grayscale(0); }
-.sponsor-placeholder { font-family: 'Bebas Neue', sans-serif; font-size: 0.75rem; letter-spacing: 0.15em; color: rgba(255,255,255,0.2); text-align: center; }
+.sponsor-placeholder { font-family: 'Bebas Neue', sans-serif; font-size: 0.75rem; letter-spacing: 0.12em; color: rgba(255,255,255,0.2); text-align: center; }
 @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
 /* FOOTER */
@@ -265,7 +241,7 @@ footer { background: #050505; border-top: 2px solid var(--rojo); padding: 48px 4
 <section id="inicio">
     <div class="hero-org-logo">
         <img src="logosdepadeltour.png" alt="SDE Pádel Tour"
-             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
         <span class="logo-placeholder" style="display:none">SDE</span>
     </div>
     <span class="hero-tag">Temporada 2026</span>
@@ -273,8 +249,7 @@ footer { background: #050505; border-top: 2px solid var(--rojo); padding: 48px 4
         <span class="line-rojo">SDE PÁDEL</span>
         <span class="line-celeste">TOUR</span>
     </h1>
-    <p class="hero-subtitle">Competencia · Ranking · Pasión por el Pádel</p>
-    <a class="hero-cta" href="#torneos">Ver Torneos</a>
+    <p class="hero-subtitle">Somos el primer torneo puntuable de la provincia</p>
     <div class="hero-stats fade-up">
         <div class="stat-item">
             <div class="stat-num">2</div>
@@ -300,10 +275,6 @@ footer { background: #050505; border-top: 2px solid var(--rojo); padding: 48px 4
         <div class="divider"></div>
     </div>
     <div class="torneos-grid" id="torneos-grid"></div>
-    <div class="counter-box fade-up">
-        <div class="counter-label">Total de Jugadores en el Ranking</div>
-        <div class="counter-num" id="total-jugadores">0</div>
-    </div>
 </section>
 
 <!-- RANKING -->
@@ -366,8 +337,8 @@ footer { background: #050505; border-top: 2px solid var(--rojo); padding: 48px 4
 
 <script>
 const torneos = [
-    { nombre: "Torneo 1", fecha: "10 AL 12 DE ABRIL 2026",  jugadores: 12 },
-    { nombre: "Torneo 2", fecha: "05 AL 07 DE JUNIO 2026",  jugadores: 16 },
+    { nombre: "Torneo 1", fecha: "10 AL 12 DE ABRIL 2026", jugadores: 12 },
+    { nombre: "Torneo 2", fecha: "05 AL 07 DE JUNIO 2026", jugadores: 16 },
 ];
 
 const ranking = {
@@ -552,9 +523,9 @@ const ranking = {
 };
 
 const sponsors = [
-    { nombre: "Ford Lo Bruno",              logo: "logosponsorlobruno.png"    },
-    { nombre: "OneFit Supplements",         logo: "logosponsoronefit.png"     },
-    { nombre: "Nueva Clínica Santa Lucía",  logo: "logosponsorsantalucia.png" },
+    { nombre: "Ford Lo Bruno",             logo: "logosponsorlobruno.png"    },
+    { nombre: "OneFit Supplements",        logo: "logosponsoronefit.png"     },
+    { nombre: "Nueva Clínica Santa Lucía", logo: "logosponsorsantalucia.png" },
 ];
 
 const totalJugadores = Object.values(ranking).reduce((sum, cat) => sum + cat.length, 0);
@@ -576,7 +547,7 @@ torneos.forEach((t, i) => {
 
 // Contador animado
 function animateCount(el, target, duration = 1500) {
-    if (!el || target === 0) return;
+    if (!el) return;
     let start = 0;
     const step = Math.max(target / (duration / 16), 1);
     const timer = setInterval(() => {
@@ -586,8 +557,15 @@ function animateCount(el, target, duration = 1500) {
     }, 16);
 }
 
+// Disparar el contador del hero al cargar la página
+window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+        animateCount(document.getElementById('stat-jugadores'), totalJugadores);
+    }, 400);
+});
+
 // Ranking
-const posClass = ['top1','top2','top3'];
+const posClass = ['top1', 'top2', 'top3'];
 function renderRanking(cat) {
     const data = ranking[cat] || [];
     const tbody = document.getElementById(`body-${cat}`);
@@ -596,13 +574,13 @@ function renderRanking(cat) {
     data.forEach((r, i) => {
         const tr = document.createElement('tr');
         tr.innerHTML = `
-            <td><span class="rank-pos ${posClass[i] || ''}">${i+1}</span></td>
+            <td><span class="rank-pos ${posClass[i] || ''}">${i + 1}</span></td>
             <td>${r.jugador}</td>
             <td><span class="rank-pts">${r.pts}</span></td>`;
         tbody.appendChild(tr);
     });
 }
-['4ta','5ta','6ta','7ma'].forEach(renderRanking);
+['4ta', '5ta', '6ta', '7ma'].forEach(renderRanking);
 
 document.getElementById('tabs-nav').addEventListener('click', (e) => {
     const btn = e.target.closest('.tab-btn');
@@ -624,19 +602,9 @@ const track = document.getElementById('slider-track');
     track.appendChild(item);
 });
 
-// Scroll observer
-let counterFired = false;
+// Fade-up al hacer scroll
 const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-        if (e.isIntersecting) {
-            e.target.classList.add('visible');
-            if (!counterFired && e.target.classList.contains('counter-box')) {
-                counterFired = true;
-                animateCount(document.getElementById('total-jugadores'), totalJugadores);
-                animateCount(document.getElementById('stat-jugadores'), totalJugadores);
-            }
-        }
-    });
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.1 });
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 </script>

@@ -4,9 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SDE PÁDEL TOUR</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
-
 <style>
 :root {
     --rojo:    #E8001C;
@@ -72,31 +70,31 @@ nav {
     pointer-events: none;
 }
 .hero-org-logo {
-    width: 140px; height: 140px; border-radius: 50%;
+    width: 160px; height: 160px; border-radius: 20px;
     border: 2px solid rgba(232,0,28,0.5);
     box-shadow: 0 0 30px rgba(232,0,28,0.2), 0 0 60px rgba(0,212,255,0.08);
-    overflow: hidden; margin-bottom: 24px;
-    background: var(--gris); display: flex; align-items: center; justify-content: center;
+    overflow: hidden; margin-bottom: 28px;
+    background: #1a1a1a; display: flex; align-items: center; justify-content: center;
     transition: box-shadow 0.3s; position: relative;
 }
 .hero-org-logo:hover { box-shadow: 0 0 40px rgba(232,0,28,0.35), 0 0 80px rgba(0,212,255,0.12); }
-.hero-org-logo img { width: 100%; height: 100%; object-fit: cover; }
+.hero-org-logo img { width: 100%; height: 100%; object-fit: contain; }
 .logo-placeholder {
-    font-family: 'Bebas Neue', sans-serif; font-size: 0.75rem;
-    letter-spacing: 0.18em; color: rgba(255,255,255,0.2); text-align: center; padding: 10px;
+    font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem;
+    letter-spacing: 0.18em; color: rgba(255,255,255,0.3); text-align: center; padding: 10px;
 }
 .hero-tag {
     display: inline-block; font-size: 0.65rem; font-weight: 700;
     letter-spacing: 0.25em; color: var(--celeste);
     border: 1px solid rgba(0,212,255,0.4); padding: 6px 18px;
-    border-radius: 2px; margin-bottom: 28px; position: relative;
+    border-radius: 2px; margin-bottom: 28px;
 }
 .hero-title {
     font-family: 'Bebas Neue', sans-serif;
     font-size: clamp(4rem, 12vw, 9rem); line-height: 0.9;
-    letter-spacing: 0.06em; position: relative; margin-bottom: 10px;
+    letter-spacing: 0.06em; margin-bottom: 10px;
 }
-.hero-title .line-rojo { color: var(--rojo); display: block; }
+.hero-title .line-rojo  { color: var(--rojo); display: block; }
 .hero-title .line-celeste { color: transparent; -webkit-text-stroke: 2px var(--celeste); display: block; }
 .hero-subtitle {
     font-size: clamp(0.7rem, 1.5vw, 0.9rem); font-weight: 600;
@@ -115,7 +113,7 @@ nav {
     position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
     background: linear-gradient(90deg, transparent, var(--rojo) 40%, var(--celeste) 60%, transparent);
 }
-.hero-stats { display: flex; gap: 60px; margin-top: 64px; position: relative; }
+.hero-stats { display: flex; gap: 60px; margin-top: 64px; }
 .stat-item { text-align: center; }
 .stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 2.8rem; color: var(--celeste); line-height: 1; }
 .stat-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.18em; color: rgba(255,255,255,0.4); margin-top: 4px; }
@@ -142,8 +140,8 @@ nav {
     background: radial-gradient(circle at top right, rgba(0,212,255,0.08), transparent 70%);
 }
 .torneo-card:hover { transform: translateY(-6px); border-color: var(--celeste); box-shadow: 0 12px 40px rgba(0,212,255,0.1); }
-.torneo-card:hover .torneo-num { color: var(--celeste); }
 .torneo-num { font-family: 'Bebas Neue', sans-serif; font-size: 3.5rem; color: rgba(232,0,28,0.2); line-height: 1; transition: color 0.3s; margin-bottom: 8px; }
+.torneo-card:hover .torneo-num { color: var(--celeste); }
 .torneo-nombre { font-size: 0.85rem; font-weight: 700; letter-spacing: 0.1em; margin-bottom: 16px; }
 .torneo-info { display: flex; flex-direction: column; gap: 6px; }
 .torneo-info span { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; color: rgba(255,255,255,0.45); }
@@ -179,11 +177,6 @@ nav {
 .rank-pos.top2 { color: rgba(255,255,255,0.6); }
 .rank-pos.top3 { color: rgba(232,150,0,0.8); }
 .rank-pts { font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; color: var(--celeste); }
-.ranking-empty {
-    text-align: center; padding: 60px 20px; font-size: 0.65rem; font-weight: 700;
-    letter-spacing: 0.2em; color: rgba(255,255,255,0.2); border: 1px dashed rgba(255,255,255,0.08);
-}
-.ranking-empty span { display: block; font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: rgba(255,255,255,0.08); margin-bottom: 10px; }
 .ranking-note { text-align: center; margin-top: 24px; font-size: 0.62rem; letter-spacing: 0.15em; color: rgba(255,255,255,0.3); }
 
 /* SPONSORS */
@@ -196,8 +189,6 @@ nav {
 .slider-wrap::after  { right: 0; background: linear-gradient(-90deg, var(--fondo2), transparent); }
 .slider-track { display: flex; gap: 40px; width: max-content; animation: marquee 20s linear infinite; }
 .slider-track:hover { animation-play-state: paused; }
-
-/* Marco cuadrado y redondeado — relación 1:1 */
 .sponsor-item {
     display: flex; align-items: center; justify-content: center;
     width: 130px; height: 130px;
@@ -216,11 +207,11 @@ nav {
 .sponsor-item img {
     width: 100%; height: 100%;
     object-fit: contain;
-    filter: brightness(0.7) grayscale(1);
+    filter: brightness(0.75) grayscale(0.3);
     transition: filter 0.3s;
 }
 .sponsor-item:hover img { filter: brightness(1) grayscale(0); }
-.sponsor-placeholder { font-family: 'Bebas Neue', sans-serif; font-size: 0.85rem; letter-spacing: 0.15em; color: rgba(255,255,255,0.2); text-align: center; }
+.sponsor-placeholder { font-family: 'Bebas Neue', sans-serif; font-size: 0.75rem; letter-spacing: 0.15em; color: rgba(255,255,255,0.2); text-align: center; }
 @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
 /* FOOTER */
@@ -252,7 +243,7 @@ footer { background: #050505; border-top: 2px solid var(--rojo); padding: 48px 4
 @media (max-width: 480px) {
     .nav-links { display: none; }
     .hero-stats { flex-direction: column; gap: 20px; }
-    .hero-org-logo { width: 100px; height: 100px; }
+    .hero-org-logo { width: 110px; height: 110px; }
     .sponsor-item { width: 100px; height: 100px; border-radius: 18px; }
 }
 </style>
@@ -273,8 +264,8 @@ footer { background: #050505; border-top: 2px solid var(--rojo); padding: 48px 4
 <!-- HERO -->
 <section id="inicio">
     <div class="hero-org-logo">
-        <img src="logo-organizacion.png.png" alt="SDE Pádel Tour"
-             onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+        <img src="logosdepadeltour.png" alt="SDE Pádel Tour"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
         <span class="logo-placeholder" style="display:none">SDE</span>
     </div>
     <span class="hero-tag">Temporada 2026</span>
@@ -529,6 +520,7 @@ const ranking = {
         { jugador: "MIGUEL CAMPOS", pts: 250 },
         { jugador: "ANTONIO RAMIREZ", pts: 200 },
         { jugador: "GERMAN SOTELO", pts: 200 },
+        { jugador: "PABLO DON ABELLEIRA", pts: 200 },
         { jugador: "AGUSTIN VERGOTTINI", pts: 150 },
         { jugador: "ANGEL GOMEZ", pts: 150 },
         { jugador: "ARIEL MARTINETTI", pts: 150 },
@@ -540,7 +532,6 @@ const ranking = {
         { jugador: "LUIS CORDERO", pts: 150 },
         { jugador: "MAURICIO QUIROGA", pts: 150 },
         { jugador: "MAXI BOLAÑEZ", pts: 150 },
-        { jugador: "PABLO DON ABELLEIRA", pts: 150 },
         { jugador: "AGUSTIN ALEGRE", pts: 100 },
         { jugador: "PABLO LUNA", pts: 100 },
         { jugador: "ALEJANDRO ROMUALDO", pts: 50 },
@@ -555,20 +546,20 @@ const ranking = {
         { jugador: "LUIS MIRANDA", pts: 50 },
         { jugador: "MARCOS QUINTEROS", pts: 50 },
         { jugador: "NAHUEL MIGUEL", pts: 50 },
-        { jugador: "PABLO ABELLEIRA", pts: 50 },
         { jugador: "SANTIAGO CATELLA", pts: 50 },
         { jugador: "SOLEDAD JUGO", pts: 50 },
     ],
 };
 
 const sponsors = [
-    { nombre: "Ford Lo Bruno", logo: "logo1.png.PNG" },
-    { nombre: "OneFit Supplements", logo: "logo2.png.jpeg" },
-    { nombre: "Nueva Clínica Santa Lucía", logo: "logo3.png.png" },
+    { nombre: "Ford Lo Bruno",              logo: "logosponsorlobruno.png"    },
+    { nombre: "OneFit Supplements",         logo: "logosponsoronefit.png"     },
+    { nombre: "Nueva Clínica Santa Lucía",  logo: "logosponsorsantalucia.png" },
 ];
 
 const totalJugadores = Object.values(ranking).reduce((sum, cat) => sum + cat.length, 0);
 
+// Torneos
 const grid = document.getElementById('torneos-grid');
 torneos.forEach((t, i) => {
     const card = document.createElement('div');
@@ -583,8 +574,9 @@ torneos.forEach((t, i) => {
     grid.appendChild(card);
 });
 
+// Contador animado
 function animateCount(el, target, duration = 1500) {
-    if (target === 0) { el.textContent = 0; return; }
+    if (!el || target === 0) return;
     let start = 0;
     const step = Math.max(target / (duration / 16), 1);
     const timer = setInterval(() => {
@@ -594,21 +586,18 @@ function animateCount(el, target, duration = 1500) {
     }, 16);
 }
 
+// Ranking
 const posClass = ['top1','top2','top3'];
 function renderRanking(cat) {
     const data = ranking[cat] || [];
     const tbody = document.getElementById(`body-${cat}`);
     if (!tbody) return;
     tbody.innerHTML = '';
-    if (data.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="3" style="text-align:center;padding:40px;color:rgba(255,255,255,0.2);font-size:0.65rem;letter-spacing:0.2em;">Sin datos cargados</td></tr>`;
-        return;
-    }
     data.forEach((r, i) => {
         const tr = document.createElement('tr');
         tr.innerHTML = `
             <td><span class="rank-pos ${posClass[i] || ''}">${i+1}</span></td>
-            <td>${r.jugador.toUpperCase()}</td>
+            <td>${r.jugador}</td>
             <td><span class="rank-pts">${r.pts}</span></td>`;
         tbody.appendChild(tr);
     });
@@ -625,15 +614,17 @@ document.getElementById('tabs-nav').addEventListener('click', (e) => {
     document.getElementById(`panel-${cat}`).classList.add('active');
 });
 
+// Sponsors slider
 const track = document.getElementById('slider-track');
 [...sponsors, ...sponsors].forEach(s => {
     const item = document.createElement('div');
     item.className = 'sponsor-item';
     item.innerHTML = `<img src="${s.logo}" alt="${s.nombre}"
-        onerror="this.style.display='none'; this.parentNode.innerHTML='<span class=\\'sponsor-placeholder\\'>${s.nombre.toUpperCase()}</span>'">`;
+        onerror="this.style.display='none'; this.parentNode.innerHTML='<span class=\\'sponsor-placeholder\\'>${s.nombre}</span>'">`;
     track.appendChild(item);
 });
 
+// Scroll observer
 let counterFired = false;
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
@@ -649,6 +640,5 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 </script>
-
 </body>
 </html>

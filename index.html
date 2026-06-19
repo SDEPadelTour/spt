@@ -182,7 +182,7 @@ nav {
     border-radius: 24px;
     padding: 12px; flex-shrink: 0;
     transition: border-color 0.3s, box-shadow 0.3s;
-    overflow: hidden;
+    overflow: hidden; cursor: pointer;
 }
 .sponsor-item:hover { border-color: rgba(0,212,255,0.4); box-shadow: 0 0 20px rgba(0,212,255,0.08); }
 .sponsor-item img { width: 100%; height: 100%; object-fit: contain; filter: brightness(0.75) grayscale(0.3); transition: filter 0.3s; }
@@ -523,9 +523,9 @@ const ranking = {
 };
 
 const sponsors = [
-    { nombre: "Ford Lo Bruno",             logo: "logosponsorlobruno.png"    },
-    { nombre: "OneFit Supplements",        logo: "logosponsoronefit.png"     },
-    { nombre: "Nueva Clínica Santa Lucía", logo: "logosponsorsantalucia.png" },
+    { nombre: "Ford Lo Bruno",             logo: "logosponsorlobruno.png",    url: "https://www.instagram.com/lobrunoautomotores" },
+    { nombre: "OneFit Supplements",        logo: "logosponsoronefit.png",     url: "https://www.instagram.com/onefit.suplements"  },
+    { nombre: "Nueva Clínica Santa Lucía", logo: "logosponsorsantalucia.png", url: "https://www.instagram.com/clinica_santalucia" },
 ];
 
 const totalJugadores = Object.values(ranking).reduce((sum, cat) => sum + cat.length, 0);
@@ -558,7 +558,6 @@ function animateCount(el, target, duration = 1500) {
     }, 16);
 }
 
-// Disparar contador del hero al cargar
 window.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => animateCount(document.getElementById('stat-jugadores'), totalJugadores), 400);
 });
@@ -591,14 +590,17 @@ document.getElementById('tabs-nav').addEventListener('click', (e) => {
     document.getElementById(`panel-${cat}`).classList.add('active');
 });
 
-// Sponsors slider
+// Sponsors slider con links de Instagram
 const track = document.getElementById('slider-track');
 [...sponsors, ...sponsors].forEach(s => {
-    const item = document.createElement('div');
-    item.className = 'sponsor-item';
-    item.innerHTML = `<img src="${s.logo}" alt="${s.nombre}"
+    const link = document.createElement('a');
+    link.href = s.url;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.className = 'sponsor-item';
+    link.innerHTML = `<img src="${s.logo}" alt="${s.nombre}"
         onerror="this.style.display='none'; this.parentNode.innerHTML='<span class=\\'sponsor-placeholder\\'>${s.nombre}</span>'">`;
-    track.appendChild(item);
+    track.appendChild(link);
 });
 
 // Fade-up al hacer scroll

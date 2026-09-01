@@ -188,6 +188,9 @@ nav {
 .sponsor-item img { width: 100%; height: 100%; object-fit: contain; filter: brightness(0.75) grayscale(0.3); transition: filter 0.3s; }
 .sponsor-item:hover img { filter: brightness(1) grayscale(0); }
 .sponsor-placeholder { font-family: 'Bebas Neue', sans-serif; font-size: 0.75rem; letter-spacing: 0.12em; color: rgba(255,255,255,0.2); text-align: center; }
+.sponsor-white-bg { background: #FFFFFF !important; }
+.sponsor-white-bg img { filter: none !important; }
+.sponsor-white-bg:hover img { filter: none !important; }
 @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
 /* FOOTER */
@@ -597,9 +600,9 @@ const sponsors = [
     { nombre: "Ford Lo Bruno",             logo: "logosponsorlobruno.png",      url: "https://www.instagram.com/lobrunoautomotores"          },
     { nombre: "OneFit Supplements",        logo: "logosponsoronefit.png",       url: "https://www.instagram.com/onefit.suplements"           },
     { nombre: "Nueva Clínica Santa Lucía", logo: "logosponsorsantalucia.png",   url: "https://www.instagram.com/clinica_santalucia"          },
-    { nombre: "Joyex Plaza",               logo: "logosponsorjoyex.png",        url: "https://www.instagram.com/joyexplaza"                  },
-    { nombre: "JLS Distribuidora",         logo: "logosponsorjorgelopez.png",   url: "https://www.instagram.com/jorgelopezsaad_distribuidora" },
-    { nombre: "CyS",                       logo: "logosponsorcys.png",          url: "https://www.instagram.com/insta.cys"                   },
+    { nombre: "Joyex Plaza",               logo: "logosponsorjoyex.png",        url: "https://www.instagram.com/joyexplaza",                  whiteBg: true },
+    { nombre: "JLS Distribuidora",         logo: "logosponsorjorgelopez.png",   url: "https://www.instagram.com/jorgelopezsaad_distribuidora", whiteBg: true },
+    { nombre: "CyS",                       logo: "logosponsorcys.png",          url: "https://www.instagram.com/insta.cys",                   whiteBg: true },
 ];
 
 const totalJugadores = Object.values(ranking).reduce((sum, cat) => sum + cat.length, 0);
@@ -671,7 +674,7 @@ const track = document.getElementById('slider-track');
     link.href = s.url;
     link.target = '_blank';
     link.rel = 'noopener noreferrer';
-    link.className = 'sponsor-item';
+    link.className = 'sponsor-item' + (s.whiteBg ? ' sponsor-white-bg' : '');
     link.innerHTML = `<img src="${s.logo}" alt="${s.nombre}"
         onerror="this.style.display='none'; this.parentNode.innerHTML='<span class=\\'sponsor-placeholder\\'>${s.nombre}</span>'">`;
     track.appendChild(link);

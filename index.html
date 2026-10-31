@@ -79,31 +79,13 @@ nav {
 }
 .hero-org-logo:hover { box-shadow: 0 0 40px rgba(232,0,28,0.35), 0 0 80px rgba(0,212,255,0.12); }
 .hero-org-logo img { width: 100%; height: 100%; object-fit: contain; }
-.logo-placeholder {
-    font-family: 'Bebas Neue', sans-serif; font-size: 1rem;
-    letter-spacing: 0.18em; color: rgba(255,255,255,0.2); padding: 10px;
-}
-.hero-tag {
-    display: inline-block; font-size: 0.65rem; font-weight: 700;
-    letter-spacing: 0.25em; color: var(--celeste);
-    border: 1px solid rgba(0,212,255,0.4); padding: 6px 18px;
-    border-radius: 2px; margin-bottom: 28px;
-}
-.hero-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(4rem, 12vw, 9rem); line-height: 0.9;
-    letter-spacing: 0.06em; margin-bottom: 10px;
-}
+.logo-placeholder { font-family: 'Bebas Neue', sans-serif; font-size: 1rem; letter-spacing: 0.18em; color: rgba(255,255,255,0.2); padding: 10px; }
+.hero-tag { display: inline-block; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.25em; color: var(--celeste); border: 1px solid rgba(0,212,255,0.4); padding: 6px 18px; border-radius: 2px; margin-bottom: 28px; }
+.hero-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(4rem, 12vw, 9rem); line-height: 0.9; letter-spacing: 0.06em; margin-bottom: 10px; }
 .hero-title .line-rojo   { color: var(--rojo); display: block; }
 .hero-title .line-celeste { color: transparent; -webkit-text-stroke: 2px var(--celeste); display: block; }
-.hero-subtitle {
-    font-size: clamp(0.62rem, 1.3vw, 0.8rem); font-weight: 600;
-    letter-spacing: 0.18em; color: rgba(255,255,255,0.5); margin-bottom: 48px;
-}
-.hero-line {
-    position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
-    background: linear-gradient(90deg, transparent, var(--rojo) 40%, var(--celeste) 60%, transparent);
-}
+.hero-subtitle { font-size: clamp(0.62rem, 1.3vw, 0.8rem); font-weight: 600; letter-spacing: 0.18em; color: rgba(255,255,255,0.5); margin-bottom: 48px; }
+.hero-line { position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent, var(--rojo) 40%, var(--celeste) 60%, transparent); }
 .hero-stats { display: flex; gap: 60px; margin-top: 48px; }
 .stat-item { text-align: center; }
 .stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 2.8rem; color: var(--celeste); line-height: 1; }
@@ -119,17 +101,9 @@ nav {
 
 /* TORNEOS */
 #torneos { background: var(--fondo2); }
-.torneos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1100px; margin: 0 auto; }
-.torneo-card {
-    background: var(--gris); border: 1px solid rgba(255,255,255,0.07);
-    border-top: 3px solid var(--rojo); padding: 30px 28px;
-    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
-    position: relative; overflow: hidden;
-}
-.torneo-card::before {
-    content: ''; position: absolute; top: 0; right: 0; width: 80px; height: 80px;
-    background: radial-gradient(circle at top right, rgba(0,212,255,0.08), transparent 70%);
-}
+.torneos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; }
+.torneo-card { background: var(--gris); border: 1px solid rgba(255,255,255,0.07); border-top: 3px solid var(--rojo); padding: 30px 28px; transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s; position: relative; overflow: hidden; }
+.torneo-card::before { content: ''; position: absolute; top: 0; right: 0; width: 80px; height: 80px; background: radial-gradient(circle at top right, rgba(0,212,255,0.08), transparent 70%); }
 .torneo-card:hover { transform: translateY(-6px); border-color: var(--celeste); box-shadow: 0 12px 40px rgba(0,212,255,0.1); }
 .torneo-card:hover .torneo-num { color: var(--celeste); }
 .torneo-num { font-family: 'Bebas Neue', sans-serif; font-size: 3.5rem; color: rgba(232,0,28,0.2); line-height: 1; transition: color 0.3s; margin-bottom: 8px; }
@@ -140,21 +114,39 @@ nav {
 
 /* RANKING */
 #ranking { background: var(--fondo3); }
-.tabs-nav { display: flex; justify-content: center; gap: 6px; margin-bottom: 36px; flex-wrap: wrap; }
+.tabs-nav { margin-bottom: 36px; }
+.tabs-group { display: flex; flex-direction: column; align-items: center; margin-bottom: 18px; gap: 10px; }
+.tabs-group-buttons { display: flex; align-items: center; justify-content: center; gap: 6px; flex-wrap: wrap; }
+.tabs-group-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.1rem; letter-spacing: 0.28em;
+    color: rgba(0,212,255,0.6);
+    position: relative; display: flex; align-items: center; gap: 14px;
+}
+.tabs-group-label::before, .tabs-group-label::after {
+    content: ''; display: block; width: 50px; height: 1px;
+    background: rgba(0,212,255,0.2);
+}
+.tabs-group.fem .tabs-group-label { color: rgba(180,80,255,0.65); }
+.tabs-group.fem .tabs-group-label::before,
+.tabs-group.fem .tabs-group-label::after { background: rgba(180,80,255,0.2); }
 .tab-btn {
-    font-family: 'Montserrat', sans-serif; font-size: 0.7rem; font-weight: 700;
-    letter-spacing: 0.18em; text-transform: uppercase; padding: 10px 28px;
+    font-family: 'Montserrat', sans-serif; font-size: 0.68rem; font-weight: 700;
+    letter-spacing: 0.15em; text-transform: uppercase; padding: 9px 22px;
     background: transparent; color: rgba(255,255,255,0.4);
     border: 1px solid rgba(255,255,255,0.12); cursor: pointer; transition: all 0.25s;
     clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
 }
 .tab-btn:hover { color: var(--blanco); border-color: rgba(255,255,255,0.3); }
-.tab-btn.active { background: var(--rojo); color: var(--blanco); border-color: var(--rojo); }
+.tab-btn.active { background: var(--celeste); color: #000; border-color: var(--celeste); }
+.tab-btn.fem.active { background: #9B00CC; color: var(--blanco); border-color: #9B00CC; }
 .tab-panel { display: none; max-width: 800px; margin: 0 auto; overflow-x: auto; }
 .tab-panel.active { display: block; }
 .ranking-table { width: 100%; border-collapse: collapse; font-size: 0.75rem; letter-spacing: 0.08em; }
-.ranking-table thead tr { background: rgba(232,0,28,0.15); border-bottom: 2px solid var(--rojo); }
-.ranking-table th { padding: 14px 20px; text-align: left; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; color: var(--rojo); }
+.ranking-table thead tr { background: rgba(0,212,255,0.08); border-bottom: 2px solid var(--celeste); }
+.ranking-table.fem thead tr { background: rgba(155,0,204,0.15); border-bottom: 2px solid #9B00CC; }
+.ranking-table th { padding: 14px 20px; text-align: left; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; color: var(--celeste); }
+.ranking-table.fem th { color: #CC44FF; }
 .ranking-table td { padding: 14px 20px; border-bottom: 1px solid rgba(255,255,255,0.05); color: rgba(255,255,255,0.8); font-weight: 600; }
 .ranking-table tbody tr:hover { background: rgba(0,212,255,0.04); }
 .rank-pos { font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; color: rgba(255,255,255,0.25); }
@@ -167,23 +159,12 @@ nav {
 /* SPONSORS */
 #sponsors { background: var(--fondo2); }
 .slider-wrap { overflow: hidden; position: relative; padding: 10px 0; }
-.slider-wrap::before, .slider-wrap::after {
-    content: ''; position: absolute; top: 0; bottom: 0; width: 120px; z-index: 2; pointer-events: none;
-}
+.slider-wrap::before, .slider-wrap::after { content: ''; position: absolute; top: 0; bottom: 0; width: 120px; z-index: 2; pointer-events: none; }
 .slider-wrap::before { left: 0;  background: linear-gradient(90deg, var(--fondo2), transparent); }
 .slider-wrap::after  { right: 0; background: linear-gradient(-90deg, var(--fondo2), transparent); }
 .slider-track { display: flex; gap: 40px; width: max-content; animation: marquee 24s linear infinite; }
 .slider-track:hover { animation-play-state: paused; }
-.sponsor-item {
-    display: flex; align-items: center; justify-content: center;
-    width: 130px; height: 130px;
-    background: #3A3A3A;
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 24px;
-    padding: 12px; flex-shrink: 0;
-    transition: border-color 0.3s, box-shadow 0.3s;
-    overflow: hidden; cursor: pointer;
-}
+.sponsor-item { display: flex; align-items: center; justify-content: center; width: 130px; height: 130px; background: #3A3A3A; border: 1px solid rgba(255,255,255,0.12); border-radius: 24px; padding: 12px; flex-shrink: 0; transition: border-color 0.3s, box-shadow 0.3s; overflow: hidden; cursor: pointer; }
 .sponsor-item:hover { border-color: rgba(0,212,255,0.4); box-shadow: 0 0 20px rgba(0,212,255,0.08); }
 .sponsor-item img { width: 100%; height: 100%; object-fit: contain; filter: brightness(0.75) grayscale(0.3); transition: filter 0.3s; }
 .sponsor-item:hover img { filter: brightness(1) grayscale(0); }
@@ -215,6 +196,8 @@ footer { background: #050505; border-top: 2px solid var(--rojo); padding: 48px 4
     .torneos-grid { grid-template-columns: 1fr; }
     .ranking-table th, .ranking-table td { padding: 10px 12px; }
     .footer-nav { flex-wrap: wrap; gap: 14px; }
+    .tab-btn { padding: 8px 14px; font-size: 0.62rem; }
+    .tabs-group-label { display: none; }
 }
 @media (max-width: 480px) {
     .nav-links { display: none; }
@@ -252,7 +235,7 @@ footer { background: #050505; border-top: 2px solid var(--rojo); padding: 48px 4
     <p class="hero-subtitle">Somos el primer torneo puntuable de la provincia</p>
     <div class="hero-stats fade-up">
         <div class="stat-item">
-            <div class="stat-num">3</div>
+            <div class="stat-num">4</div>
             <div class="stat-label">Torneos</div>
         </div>
         <div class="stat-item">
@@ -260,7 +243,7 @@ footer { background: #050505; border-top: 2px solid var(--rojo); padding: 48px 4
             <div class="stat-label">Jugadores</div>
         </div>
         <div class="stat-item">
-            <div class="stat-num">5</div>
+            <div class="stat-num">8</div>
             <div class="stat-label">Categorías</div>
         </div>
     </div>
@@ -286,14 +269,40 @@ footer { background: #050505; border-top: 2px solid var(--rojo); padding: 48px 4
     </div>
     <div class="fade-up">
         <div class="tabs-nav" id="tabs-nav">
-            <button class="tab-btn active" data-cat="3ra">3ra Categoría</button>
-            <button class="tab-btn" data-cat="4ta">4ta Categoría</button>
-            <button class="tab-btn" data-cat="5ta">5ta Categoría</button>
-            <button class="tab-btn" data-cat="6ta">6ta Categoría</button>
-            <button class="tab-btn" data-cat="7ma">7ma Categoría</button>
+            <div class="tabs-group fem">
+                <span class="tabs-group-label">DAMAS</span>
+                <div class="tabs-group-buttons">
+                    <button class="tab-btn fem active" data-cat="5da">5ta</button>
+                    <button class="tab-btn fem" data-cat="6da">6ta</button>
+                    <button class="tab-btn fem" data-cat="7da">7ma</button>
+                </div>
+            </div>
+            <div class="tabs-group">
+                <span class="tabs-group-label">CABALLEROS</span>
+                <div class="tabs-group-buttons">
+                    <button class="tab-btn" data-cat="libre">Libre</button>
+                    <button class="tab-btn" data-cat="4ta">4ta</button>
+                    <button class="tab-btn" data-cat="5ta">5ta</button>
+                    <button class="tab-btn" data-cat="6ta">6ta</button>
+                    <button class="tab-btn" data-cat="7ma">7ma</button>
+                </div>
+            </div>
         </div>
-        <div class="tab-panel active" id="panel-3ra">
-            <table class="ranking-table"><thead><tr><th>#</th><th>Jugador</th><th>Pts</th></tr></thead><tbody id="body-3ra"></tbody></table>
+
+        <div class="tab-panel active" id="panel-5da">
+            <table class="ranking-table fem"><thead><tr><th>#</th><th>Jugadora</th><th>Pts</th></tr></thead><tbody id="body-5da"></tbody></table>
+            <p class="ranking-note">* Ranking actualizado al cierre de cada torneo</p>
+        </div>
+        <div class="tab-panel" id="panel-6da">
+            <table class="ranking-table fem"><thead><tr><th>#</th><th>Jugadora</th><th>Pts</th></tr></thead><tbody id="body-6da"></tbody></table>
+            <p class="ranking-note">* Ranking actualizado al cierre de cada torneo</p>
+        </div>
+        <div class="tab-panel" id="panel-7da">
+            <table class="ranking-table fem"><thead><tr><th>#</th><th>Jugadora</th><th>Pts</th></tr></thead><tbody id="body-7da"></tbody></table>
+            <p class="ranking-note">* Ranking actualizado al cierre de cada torneo</p>
+        </div>
+        <div class="tab-panel" id="panel-libre">
+            <table class="ranking-table"><thead><tr><th>#</th><th>Jugador</th><th>Pts</th></tr></thead><tbody id="body-libre"></tbody></table>
             <p class="ranking-note">* Ranking actualizado al cierre de cada torneo</p>
         </div>
         <div class="tab-panel" id="panel-4ta">
@@ -342,129 +351,238 @@ footer { background: #050505; border-top: 2px solid var(--rojo); padding: 48px 4
 
 <script>
 const torneos = [
-    { nombre: "Torneo 1", fecha: "10 AL 12 DE ABRIL 2026",   jugadores: 64,  categorias: 2 },
-    { nombre: "Torneo 2", fecha: "05 AL 07 DE JUNIO 2026",   jugadores: 138, categorias: 4 },
-    { nombre: "Torneo 3", fecha: "14 AL 17 DE AGOSTO 2026",  jugadores: 52,  categorias: 4 },
+    { nombre: "Torneo 1", fecha: "10 AL 12 DE ABRIL 2026",    jugadores: 64,  categorias: 2 },
+    { nombre: "Torneo 2", fecha: "05 AL 07 DE JUNIO 2026",    jugadores: 138, categorias: 4 },
+    { nombre: "Torneo 3", fecha: "14 AL 17 DE AGOSTO 2026",   jugadores: 52,  categorias: 4 },
+    { nombre: "Torneo 4", fecha: "16 AL 18 DE OCTUBRE 2026",  jugadores: 202, categorias: 4 },
 ];
 
 const ranking = {
-    "3ra": [
-        { jugador: "PABLO BASTIT",       pts: 1050 },
-        { jugador: "IVAN CARDOZO",       pts: 1000 },
+    "5da": [
+        { jugador: "NATACHA NAVARRO",      pts: 1050 },
+        { jugador: "GUADALUPE MONTIEL",    pts: 1000 },
+        { jugador: "LORENA PICCO",         pts: 700  },
+        { jugador: "AYELEN MARTINEZ",      pts: 700  },
+        { jugador: "GIANINA ROSALEN",      pts: 450  },
+        { jugador: "YANINA GINEVRY",       pts: 450  },
+        { jugador: "CAROLINA PALAVECINO",  pts: 450  },
+        { jugador: "PIA MONTENEGRO",       pts: 450  },
+        { jugador: "GABRIELA FIAD",        pts: 250  },
+        { jugador: "ALEJANDRA LOTO",       pts: 250  },
+        { jugador: "AGOSTINA RUIZ",        pts: 250  },
+        { jugador: "ALDANA RUIZ",          pts: 250  },
+        { jugador: "CAMILA MUSSI",         pts: 50   },
+        { jugador: "MIKAELA CEJAS",        pts: 50   },
+        { jugador: "NAHIR CHAZARRETA",     pts: 50   },
+        { jugador: "MARISOL CHAZARRETA",   pts: 50   },
+        { jugador: "CARLA GARCIA",         pts: 50   },
+        { jugador: "FLORENCIA GARCIA",     pts: 50   },
+    ],
+    "6da": [
+        { jugador: "LUISINA LACUADRA",         pts: 1050 },
+        { jugador: "ISABEL GORDILLO",           pts: 1000 },
+        { jugador: "SOFIA MANSILLA",            pts: 700  },
+        { jugador: "BRISA SCRIMINI",            pts: 700  },
+        { jugador: "EUGENIA HERRERA",           pts: 450  },
+        { jugador: "MARIA SILVIA OLMEDO",       pts: 450  },
+        { jugador: "ANDREA ARGAÑARAZ",          pts: 450  },
+        { jugador: "LOURDES RATIER",            pts: 450  },
+        { jugador: "DOLORES VILLAVICENCIO",     pts: 250  },
+        { jugador: "IVANA SCALANTEZ",           pts: 250  },
+        { jugador: "AGOSTINA GIOVANNIELLO",     pts: 250  },
+        { jugador: "MARIA JOSE DURAN",          pts: 250  },
+        { jugador: "NANINA TULA",               pts: 250  },
+        { jugador: "CANDELA CASTAÑO",           pts: 250  },
+        { jugador: "ANTONELA OROZCO",           pts: 250  },
+        { jugador: "AYLEN GALVAN",              pts: 250  },
+        { jugador: "LUCIANA ALEGRE",            pts: 50   },
+        { jugador: "CAMILA MUSSI",              pts: 50   },
+        { jugador: "FLORENCIA JUGO",            pts: 50   },
+        { jugador: "GIANINA CEJAS",             pts: 50   },
+        { jugador: "VIRGINIA SKUPIN",           pts: 50   },
+        { jugador: "ORIANA BRUNET",             pts: 50   },
+    ],
+    "7da": [
+        { jugador: "AGUSTINA CASTRO",           pts: 1050 },
+        { jugador: "GIMENA GRAMAJO",            pts: 1000 },
+        { jugador: "MELISA ARGAÑARAZ",          pts: 700  },
+        { jugador: "BELEN CIANFERONI",          pts: 700  },
+        { jugador: "VIRGINIA BRIZUELA",         pts: 450  },
+        { jugador: "ANA FARIAS",                pts: 450  },
+        { jugador: "CIELO CHAZARRETA",          pts: 450  },
+        { jugador: "NAHIR MOISES",              pts: 450  },
+        { jugador: "MARIA BELEN FERNANDEZ",     pts: 250  },
+        { jugador: "VALENTINA GRAMAJO",         pts: 250  },
+        { jugador: "MARIA EUGENIA MOLINARI",    pts: 250  },
+        { jugador: "LOLA BUTILER",              pts: 250  },
+        { jugador: "SOFIA CASTAÑARES",          pts: 50   },
+        { jugador: "ABELINA LESCANO",           pts: 50   },
+        { jugador: "ROCIO ENRICO",              pts: 50   },
+        { jugador: "DANIELA JUAREZ",            pts: 50   },
+        { jugador: "MARIA DANNA",               pts: 50   },
+        { jugador: "VERONICA ZABALETA",         pts: 50   },
+    ],
+    "libre": [
+        { jugador: "ENZO QUADRELLI",     pts: 1500 },
+        { jugador: "EMILIO CASTRO",      pts: 1400 },
+        { jugador: "PABLO BASTIT",       pts: 1100 },
+        { jugador: "IVAN CARDOZO",       pts: 1050 },
+        { jugador: "MARTIN RUIZ",        pts: 1000 },
+        { jugador: "PIO MONTENEGRO",     pts: 700  },
+        { jugador: "MARIO CAZZANIGA",    pts: 700  },
         { jugador: "LUCIANO SERRANO",    pts: 700  },
-        { jugador: "EMILIO CASTRO",      pts: 700  },
-        { jugador: "ENZO QUADRELLI",     pts: 450  },
-        { jugador: "PIO MONTENEGRO",     pts: 450  },
-        { jugador: "MARIO CAZZANIGA",    pts: 450  },
+        { jugador: "IGNACIO LOPEZ",      pts: 700  },
+        { jugador: "MARIANO WITTE",      pts: 500  },
         { jugador: "ALONSO CORVALAN",    pts: 450  },
-        { jugador: "MARIANO WITTE",      pts: 250  },
+        { jugador: "RICARDO NAJARRO",    pts: 450  },
+        { jugador: "GREGORIO BUGEAU",    pts: 450  },
+        { jugador: "NICOLAS ANDERSEN",   pts: 450  },
+        { jugador: "LUCAS CRISTOFOLI",   pts: 450  },
+        { jugador: "MATIAS BOLOMO",      pts: 300  },
+        { jugador: "ALEJANDRO CEJAS",    pts: 300  },
         { jugador: "MAURO TABOADA",      pts: 250  },
-        { jugador: "ALEJANDRO CEJAS",    pts: 250  },
         { jugador: "ARIEL LEZANA",       pts: 250  },
+        { jugador: "MARIANO GIRIBALDI",  pts: 100  },
         { jugador: "ADOLFO BOLOMO",      pts: 50   },
         { jugador: "LAUTARO ENET",       pts: 50   },
         { jugador: "MIGUEL SALOMON",     pts: 50   },
-        { jugador: "MARIANO GIRIBALDI",  pts: 50   },
-        { jugador: "MATIAS BOLOMO",      pts: 50   },
         { jugador: "BAUTISTA SOSA",      pts: 50   },
         { jugador: "GUSTAVO NIETO",      pts: 50   },
+        { jugador: "LUIS CESCA",         pts: 50   },
+        { jugador: "PABLO BARROS",       pts: 50   },
+        { jugador: "ALVARO LEDESMA",     pts: 50   },
+        { jugador: "FEDERICO OLIVERA",   pts: 50   },
     ],
     "4ta": [
-        { jugador: "ADOLFO BOLOMO",        pts: 1050 },
-        { jugador: "LAUTARO SALVI",        pts: 1000 },
-        { jugador: "EMANUEL GOMEZ",        pts: 700  },
-        { jugador: "SANTIAGO LOPEZ",       pts: 700  },
-        { jugador: "DANIEL ACUÑA",         pts: 450  },
-        { jugador: "TOMAS PEREYRA",        pts: 450  },
-        { jugador: "NICOLAS PAZ",          pts: 450  },
-        { jugador: "JOAQUIN FERNANDEZ",    pts: 450  },
-        { jugador: "MARIANO WITTE",        pts: 250  },
-        { jugador: "IVAN CARDOZO",         pts: 250  },
-        { jugador: "GONZALO NAZARIO",      pts: 250  },
-        { jugador: "NICOLAS ARAUJO",       pts: 250  },
-        { jugador: "FABIAN MORENO",        pts: 250  },
-        { jugador: "JORGE PAZ",            pts: 250  },
-        { jugador: "JUAN MAIDANA",         pts: 50   },
-        { jugador: "LEZANA",               pts: 50   },
-        { jugador: "FACUNDO SANTILLAN",    pts: 50   },
-        { jugador: "JUNIOR SALVATIERRA",   pts: 50   },
-        { jugador: "DANIEL SICILIA",       pts: 50   },
-        { jugador: "CRISTIAN CONCA",       pts: 50   },
-        { jugador: "MAURO TABOADA",        pts: 50   },
-        { jugador: "MARTIN SOLIVELLAS",    pts: 50   },
-        { jugador: "KARIME EBERLE",        pts: 50   },
-        { jugador: "PIO MONTENEGRO",       pts: 50   },
+        { jugador: "ADOLFO BOLOMO",       pts: 1050 },
+        { jugador: "LAUTARO SALVI",       pts: 1000 },
+        { jugador: "EMANUEL GOMEZ",       pts: 700  },
+        { jugador: "SANTIAGO LOPEZ",      pts: 700  },
+        { jugador: "DANIEL ACUÑA",        pts: 450  },
+        { jugador: "TOMAS PEREYRA",       pts: 450  },
+        { jugador: "NICOLAS PAZ",         pts: 450  },
+        { jugador: "JOAQUIN FERNANDEZ",   pts: 450  },
+        { jugador: "MARIANO WITTE",       pts: 250  },
+        { jugador: "IVAN CARDOZO",        pts: 250  },
+        { jugador: "GONZALO NAZARIO",     pts: 250  },
+        { jugador: "NICOLAS ARAUJO",      pts: 250  },
+        { jugador: "FABIAN MORENO",       pts: 250  },
+        { jugador: "JORGE PAZ",           pts: 250  },
+        { jugador: "JUAN MAIDANA",        pts: 50   },
+        { jugador: "LEZANA",              pts: 50   },
+        { jugador: "FACUNDO SANTILLAN",   pts: 50   },
+        { jugador: "JUNIOR SALVATIERRA",  pts: 50   },
+        { jugador: "DANIEL SICILIA",      pts: 50   },
+        { jugador: "CRISTIAN CONCA",      pts: 50   },
+        { jugador: "MAURO TABOADA",       pts: 50   },
+        { jugador: "MARTIN SOLIVELLAS",   pts: 50   },
+        { jugador: "KARIME EBERLE",       pts: 50   },
+        { jugador: "PIO MONTENEGRO",      pts: 50   },
     ],
     "5ta": [
-        { jugador: "JORGE LOPEZ SAAD",      pts: 1500 },
-        { jugador: "OMAR VELIZ",            pts: 1450 },
-        { jugador: "ANDRES MONTENEGRO",     pts: 1150 },
-        { jugador: "FABIO CABALLERO",       pts: 1050 },
-        { jugador: "NOELIA LLUGDAR",        pts: 950  },
-        { jugador: "PABLO ALAIMO",          pts: 950  },
-        { jugador: "PABLO ALARCON",         pts: 950  },
-        { jugador: "MARTIN TORRES",         pts: 750  },
-        { jugador: "EMILIO DIAZ",           pts: 700  },
-        { jugador: "ALEJANDRO RUIZ",        pts: 500  },
-        { jugador: "EMANUEL GARNICA",       pts: 450  },
-        { jugador: "RAUL ARIAS",            pts: 450  },
-        { jugador: "JESUS DAHER",           pts: 450  },
-        { jugador: "GUILLERMO IBAÑEZ",      pts: 450  },
-        { jugador: "RODRIGO BRAVO",         pts: 450  },
-        { jugador: "EMILIO PAEZ",           pts: 400  },
-        { jugador: "GUSTAVO RATIER",        pts: 250  },
-        { jugador: "SANTIAGO MULKI",        pts: 250  },
-        { jugador: "LUCAS MAGUNA",          pts: 250  },
-        { jugador: "IGNACIO ROJAS",         pts: 250  },
-        { jugador: "REMO TERZANO",          pts: 250  },
-        { jugador: "RAUL VILLAVICENCIO",    pts: 250  },
-        { jugador: "NICOLAS SANCHEZ",       pts: 250  },
-        { jugador: "NICOLAS NASSIF",        pts: 250  },
-        { jugador: "PAULO SMALL",           pts: 250  },
-        { jugador: "PABLO BARROS",          pts: 150  },
-        { jugador: "EMANUEL MILET",         pts: 150  },
-        { jugador: "GONZALO HERNAN",        pts: 100  },
-        { jugador: "FERNANDO ZAMBOLIN",     pts: 50   },
-        { jugador: "LUIS MORALES",          pts: 50   },
-        { jugador: "MAIA KORMAN",           pts: 50   },
-        { jugador: "WALTER PEREZ",          pts: 50   },
-        { jugador: "ALDANA RUIZ",           pts: 50   },
-        { jugador: "MARCELO LUCATELLI",     pts: 50   },
-        { jugador: "CARLOS SANCHEZ",        pts: 50   },
-        { jugador: "NICOLAS CARRASCO",      pts: 50   },
-        { jugador: "JUAN PABLO OLIVARES",   pts: 50   },
-        { jugador: "JORGE CORONEL",         pts: 50   },
-        { jugador: "KARIME EBERLE",         pts: 50   },
-        { jugador: "ARIEL HERNANDEZ",       pts: 50   },
-        { jugador: "ANDRES AUAD",           pts: 50   },
-        { jugador: "LUCAS TORRES",          pts: 50   },
+        { jugador: "ANDRES MONTENEGRO",     pts: 2150 },
+        { jugador: "FABIO CABALLERO",        pts: 2100 },
+        { jugador: "JORGE LOPEZ SAAD",       pts: 1650 },
+        { jugador: "OMAR VELIZ",             pts: 1600 },
+        { jugador: "NOELIA LLUGDAR",         pts: 1200 },
+        { jugador: "PABLO ALAIMO",           pts: 1200 },
+        { jugador: "PABLO ALARCON",          pts: 1000 },
+        { jugador: "RODRIGO BRAVO",          pts: 900  },
+        { jugador: "EMILIO DIAZ",            pts: 850  },
+        { jugador: "MARTIN TORRES",          pts: 750  },
+        { jugador: "EMANUEL GARNICA",        pts: 700  },
+        { jugador: "MATIAS AMHED CELIZ",     pts: 700  },
+        { jugador: "FELIPE LUNA",            pts: 700  },
+        { jugador: "EMILIO PAEZ",            pts: 650  },
+        { jugador: "ALEJANDRO RUIZ",         pts: 500  },
+        { jugador: "GUILLERMO IBAÑEZ",       pts: 500  },
+        { jugador: "FERNANDO ZAMBOLIN",      pts: 500  },
+        { jugador: "RAUL ARIAS",             pts: 450  },
+        { jugador: "JESUS DAHER",            pts: 450  },
+        { jugador: "JAVIER GARCIA OLIVERA",  pts: 450  },
+        { jugador: "GONZALO NAZARIO",        pts: 450  },
+        { jugador: "REMO TERZANO",           pts: 400  },
+        { jugador: "EMANUEL MILET",          pts: 400  },
+        { jugador: "ARIEL HERNANDEZ",        pts: 300  },
+        { jugador: "RAUL VILLAVICENCIO",     pts: 300  },
+        { jugador: "GUSTAVO RATIER",         pts: 250  },
+        { jugador: "SANTIAGO MULKI",         pts: 250  },
+        { jugador: "LUCAS MAGUNA",           pts: 250  },
+        { jugador: "IGNACIO ROJAS",          pts: 250  },
+        { jugador: "NICOLAS SANCHEZ",        pts: 250  },
+        { jugador: "NICOLAS NASSIF",         pts: 250  },
+        { jugador: "PAULO SMALL",            pts: 250  },
+        { jugador: "LUCAS DELGADO",          pts: 250  },
+        { jugador: "WALTER CAMACHO",         pts: 250  },
+        { jugador: "GONZALO HERNAN",         pts: 250  },
+        { jugador: "CARLOS SANCHEZ",         pts: 200  },
+        { jugador: "JORGE CORONEL",          pts: 200  },
+        { jugador: "LUCAS TORRES",           pts: 200  },
+        { jugador: "PABLO BARROS",           pts: 150  },
+        { jugador: "RODRIGO CASTAÑO",        pts: 150  },
+        { jugador: "NICOLAS PAZ",            pts: 150  },
+        { jugador: "LUCAS ZURCHMITTEN",      pts: 150  },
+        { jugador: "DIEGO KUREZA",           pts: 150  },
+        { jugador: "LUIS MORALES",           pts: 50   },
+        { jugador: "MAIA KORMAN",            pts: 50   },
+        { jugador: "WALTER PEREZ",           pts: 50   },
+        { jugador: "ALDANA RUIZ",            pts: 50   },
+        { jugador: "MARCELO LUCATELLI",      pts: 50   },
+        { jugador: "NICOLAS CARRASCO",       pts: 50   },
+        { jugador: "JUAN PABLO OLIVARES",    pts: 50   },
+        { jugador: "KARIME EBERLE",          pts: 50   },
+        { jugador: "ANDRES AUAD",            pts: 50   },
+        { jugador: "MAIA KORMAN TURK",       pts: 50   },
+        { jugador: "ADRIAN DIAZ",            pts: 50   },
+        { jugador: "MAXIMILIANO FARIAS",     pts: 50   },
+        { jugador: "MARCELO PONCE",          pts: 50   },
+        { jugador: "FABRIZIO ZUCCARINO",     pts: 50   },
+        { jugador: "SERGIO GEREZ MORILLO",   pts: 50   },
+        { jugador: "GERMAN CORONEL",         pts: 50   },
+        { jugador: "VICTOR FARIAS",          pts: 50   },
+        { jugador: "HUGO CALDERA",           pts: 50   },
+        { jugador: "ORIETA CARLOS",          pts: 50   },
+        { jugador: "RUBEN DARIO ACUÑA",      pts: 50   },
     ],
     "6ta": [
+        { jugador: "GONZALO LLAVAR",        pts: 1600 },
         { jugador: "DIEGO PALOMO",          pts: 1550 },
         { jugador: "OSCAR CARABAJAL",       pts: 1500 },
-        { jugador: "GONZALO LLAVAR",        pts: 1450 },
         { jugador: "SEBASTIAN SCAGLIONE",   pts: 1200 },
         { jugador: "FACUNDO GRECO",         pts: 1150 },
         { jugador: "FABIAN CAMPOS",         pts: 1050 },
         { jugador: "GABRIEL LLAVAR",        pts: 1050 },
+        { jugador: "IGNACIO LASCA",         pts: 1050 },
+        { jugador: "EMILIANO MANZANELLI",   pts: 1050 },
         { jugador: "GABRIEL CAMPOS",        pts: 1000 },
-        { jugador: "IGNACIO LASCA",         pts: 900  },
+        { jugador: "JEREMIAS LLAMUR",       pts: 1000 },
         { jugador: "NICOLAS PAZ",           pts: 700  },
         { jugador: "JORGE CORONEL",         pts: 700  },
         { jugador: "RODOLFO ANGLADE",       pts: 700  },
         { jugador: "ISAAC SILBERMAN",       pts: 700  },
+        { jugador: "JUAN CRUZ MUSSI",       pts: 700  },
+        { jugador: "AGUSTIN GARAY",         pts: 700  },
         { jugador: "CARLOS CEJAS",          pts: 600  },
-        { jugador: "AGUSTIN VERGOTTINI",    pts: 450  },
+        { jugador: "NICOLAS YUNES ICK",     pts: 600  },
+        { jugador: "JOSE LODI",             pts: 600  },
+        { jugador: "AGUSTIN VERGOTTINI",    pts: 600  },
+        { jugador: "LUCAS DIAZ",            pts: 500  },
+        { jugador: "MARTIN ZANNONI",        pts: 500  },
         { jugador: "JEREMIAS NUNO",         pts: 450  },
         { jugador: "JOSE ARROYO",           pts: 450  },
         { jugador: "JUAN KAPP",             pts: 450  },
-        { jugador: "NICOLAS YUNES ICK",     pts: 450  },
-        { jugador: "JOSE LODI",             pts: 450  },
         { jugador: "SANTIAGO CEJAS",        pts: 450  },
-        { jugador: "ANIBAL GIMENEZ",        pts: 400  },
+        { jugador: "ANIBAL GIMENEZ",        pts: 450  },
+        { jugador: "MATIAS RODRIGUEZ",      pts: 450  },
+        { jugador: "IGNACIO RODRIGUEZ",     pts: 450  },
+        { jugador: "RAMIRO MDALEL",         pts: 450  },
+        { jugador: "GABRIEL LOTTO",         pts: 450  },
         { jugador: "LUCAS ACUÑA",           pts: 400  },
         { jugador: "RAUL SAAD",             pts: 400  },
-        { jugador: "FEDERICO GIMENEZ",      pts: 300  },
+        { jugador: "NAHUEL FATTOR",         pts: 400  },
+        { jugador: "MARTIN BONACINA",       pts: 350  },
+        { jugador: "SANTIAGO LEONI",        pts: 350  },
+        { jugador: "FEDERICO GIMENEZ",      pts: 350  },
         { jugador: "AGUSTIN PONCE",         pts: 250  },
         { jugador: "BENJAMIN GULOTTA",      pts: 250  },
         { jugador: "ENZO LLUGDAR",          pts: 250  },
@@ -474,16 +592,17 @@ const ranking = {
         { jugador: "JULIO NOVARINI",        pts: 250  },
         { jugador: "LUCAS TORREZ",          pts: 250  },
         { jugador: "FACUNDO JURI",          pts: 250  },
-        { jugador: "NAHUEL FATTOR",         pts: 250  },
         { jugador: "VALENTIN JORGE",        pts: 250  },
-        { jugador: "MARTIN ZANNONI",        pts: 250  },
-        { jugador: "LUCAS DIAZ",            pts: 250  },
         { jugador: "RAUL EBERLE",           pts: 250  },
         { jugador: "ALFONSO BASBUS",        pts: 250  },
-        { jugador: "ERNESTO RODRIGUEZ",     pts: 200  },
-        { jugador: "MARTIN BONACINA",       pts: 200  },
-        { jugador: "HUGO RODRIGUEZ",        pts: 200  },
-        { jugador: "SANTIAGO LEONI",        pts: 200  },
+        { jugador: "ERNESTO RODRIGUEZ",     pts: 250  },
+        { jugador: "HUGO RODRIGUEZ",        pts: 250  },
+        { jugador: "JULIE LUKIE",           pts: 250  },
+        { jugador: "IGNACIO GUEVEL",        pts: 250  },
+        { jugador: "GONZALO CORNELLI",      pts: 250  },
+        { jugador: "DANIEL ABDALA",         pts: 250  },
+        { jugador: "ENZO MANCUELLO",        pts: 250  },
+        { jugador: "PEDRO BASBUS",          pts: 250  },
         { jugador: "BENJAMIN BERNA",        pts: 150  },
         { jugador: "GASTON RUIZ",           pts: 150  },
         { jugador: "JUAN ARIAS",            pts: 150  },
@@ -491,10 +610,14 @@ const ranking = {
         { jugador: "JUAN PABLO JUAREZ",     pts: 150  },
         { jugador: "JULIAN GOMEZ",          pts: 150  },
         { jugador: "MAXIMILIANO DIAZ",      pts: 150  },
+        { jugador: "MAIA KORMAN",           pts: 150  },
+        { jugador: "XIMENA JEREZ",          pts: 150  },
+        { jugador: "JULIO NUMA",            pts: 150  },
+        { jugador: "FERNANDO SANCHEZ",      pts: 150  },
+        { jugador: "ROBERTO BRIM LOBO",     pts: 150  },
+        { jugador: "PEDRO MOLTINI",         pts: 150  },
         { jugador: "EMILIO PAEZ",           pts: 100  },
         { jugador: "GUILLERMO OLIVER",      pts: 100  },
-        { jugador: "MAIA KORMAN",           pts: 100  },
-        { jugador: "XIMENA JEREZ",          pts: 100  },
         { jugador: "PEDRO BASBUS TURK",     pts: 100  },
         { jugador: "GIANI ROSALEN",         pts: 100  },
         { jugador: "ABEL YBAÑEZ",           pts: 50   },
@@ -512,68 +635,89 @@ const ranking = {
         { jugador: "ESTEBAN TULLI",         pts: 50   },
         { jugador: "EMILIANO PAEZ",         pts: 50   },
         { jugador: "IGNACIO GALARZA",       pts: 50   },
+        { jugador: "JAIR MATOS",            pts: 50   },
+        { jugador: "JUAN BAUTISTA GONZALEZ",pts: 50   },
+        { jugador: "FACUNDO SALVI",         pts: 50   },
+        { jugador: "NICOLAS BURGOS",        pts: 50   },
+        { jugador: "JONAS RISSO PATRON",    pts: 50   },
+        { jugador: "RICARDO TERAN",         pts: 50   },
     ],
     "7ma": [
+        { jugador: "LEANDRO CASTAÑO",       pts: 1950 },
+        { jugador: "FACUNDO JURI",          pts: 1900 },
+        { jugador: "ALEJO DIAZ",            pts: 1900 },
+        { jugador: "ALEJANDRO BULACIO",     pts: 1850 },
         { jugador: "JORGE NUÑEZ",           pts: 1800 },
         { jugador: "JOSE LOBOS",            pts: 1750 },
         { jugador: "GONZALO LLANOS",        pts: 1500 },
-        { jugador: "LEANDRO CASTAÑO",       pts: 1500 },
-        { jugador: "ALEJO DIAZ",            pts: 1450 },
+        { jugador: "FRANCO RABELLO",        pts: 1150 },
         { jugador: "RODOLFO ANGLADE",       pts: 1000 },
+        { jugador: "IGNACIO BRAIA",         pts: 950  },
         { jugador: "EMANUEL GALLO",         pts: 950  },
         { jugador: "GUILLERMO BARROS",      pts: 950  },
-        { jugador: "ALEJANDRO BULACIO",     pts: 850  },
-        { jugador: "FACUNDO JURI",          pts: 850  },
+        { jugador: "ALFONSO OLIVARES",      pts: 900  },
+        { jugador: "RUBEN RISSO",           pts: 850  },
         { jugador: "JUAN CRUZ TIBERTI",     pts: 750  },
-        { jugador: "FRANCO RABELLO",        pts: 700  },
-        { jugador: "RUBEN RISSO",           pts: 700  },
-        { jugador: "FEDERICO SANTINI",      pts: 600  },
-        { jugador: "PEDRO LETURIA",         pts: 550  },
-        { jugador: "EMMANUEL GEREZ",        pts: 550  },
+        { jugador: "EMMANUEL GEREZ",        pts: 700  },
+        { jugador: "PEDRO LETURIA",         pts: 700  },
+        { jugador: "LUCAS LUCENA",          pts: 700  },
+        { jugador: "FEDERICO SANTINI",      pts: 650  },
+        { jugador: "MIGUEL CAMPOS",         pts: 550  },
+        { jugador: "FEDERICO ULLUA",        pts: 550  },
+        { jugador: "GABRIEL ACOSTA",        pts: 500  },
         { jugador: "JAIR MATOS",            pts: 500  },
         { jugador: "MARTIN BONACINA",       pts: 450  },
         { jugador: "MARTIN PEREYRA",        pts: 450  },
         { jugador: "SANTIAGO LEONI",        pts: 450  },
         { jugador: "PABLO FERNANDEZ",       pts: 450  },
-        { jugador: "ALFONSO OLIVARES",      pts: 450  },
         { jugador: "FRANCO CORBALAN",       pts: 450  },
-        { jugador: "MIGUEL CAMPOS",         pts: 400  },
-        { jugador: "FEDERICO ULLUA",        pts: 400  },
+        { jugador: "PABLO DON ABELLEIRA",   pts: 400  },
+        { jugador: "ANTONIO RAMIREZ",       pts: 400  },
+        { jugador: "GUSTAVO CARABAJAL",     pts: 400  },
+        { jugador: "LUIS CORDERO",          pts: 400  },
+        { jugador: "JESUS DIAZ",            pts: 350  },
         { jugador: "ELIAS GONZALEZ NEME",   pts: 300  },
-        { jugador: "FRANCO AVACA",          pts: 300  },
-        { jugador: "ARIEL MARTINETTI",      pts: 300  },
-        { jugador: "JESUS DIAZ",            pts: 300  },
-        { jugador: "GABRIEL ACOSTA",        pts: 250  },
-        { jugador: "IGNACIO BRAIA",         pts: 250  },
+        { jugador: "XIMENA JEREZ",          pts: 300  },
+        { jugador: "RAUL DUCCA",            pts: 300  },
+        { jugador: "PABLO LUNA",            pts: 300  },
+        { jugador: "FRANCISCO ORREGO",      pts: 300  },
         { jugador: "JUAN MILET",            pts: 250  },
         { jugador: "LEO RISSO",             pts: 250  },
         { jugador: "LUCAS FERREYRA",        pts: 250  },
         { jugador: "LUCAS VELIZ",           pts: 250  },
-        { jugador: "PABLO DON ABELLEIRA",   pts: 250  },
-        { jugador: "ANTONIO RAMIREZ",       pts: 250  },
-        { jugador: "FRANCISCO ORREGO",      pts: 250  },
         { jugador: "MATEO SCHONFELD",       pts: 250  },
         { jugador: "MIGUEL AGUERO",         pts: 250  },
+        { jugador: "IVAN BRAVO",            pts: 250  },
+        { jugador: "FABIAN MARTIN",         pts: 250  },
+        { jugador: "GASTON RUIZ",           pts: 250  },
         { jugador: "GERMAN SOTELO",         pts: 200  },
-        { jugador: "AGUSTIN VERGOTTINI",    pts: 150  },
-        { jugador: "ANGEL GOMEZ",           pts: 150  },
+        { jugador: "ANGEL GOMEZ",           pts: 200  },
         { jugador: "CRISTIAN APESTEGUIA",   pts: 150  },
         { jugador: "FEDE RUIZ",             pts: 150  },
         { jugador: "GABRIEL MONTINHO",      pts: 150  },
-        { jugador: "GUSTAVO CARABAJAL",     pts: 150  },
-        { jugador: "LUIS CORDERO",          pts: 150  },
         { jugador: "MAURICIO QUIROGA",      pts: 150  },
         { jugador: "MAXI BOLAÑEZ",          pts: 150  },
-        { jugador: "PABLO LUNA",            pts: 150  },
         { jugador: "NICOLAS NAVARRO",       pts: 150  },
         { jugador: "DAMIAN AVACA",          pts: 150  },
         { jugador: "DIEGO QUINTANA",        pts: 150  },
-        { jugador: "AGUSTIN ALEGRE",        pts: 100  },
+        { jugador: "AGUSTIN VERGOTTINI",    pts: 150  },
+        { jugador: "AGUSTIN ALEGRE",        pts: 150  },
+        { jugador: "ADRIAN AVACA",          pts: 150  },
+        { jugador: "DIEGO ACUÑA",           pts: 150  },
+        { jugador: "MAURO SCAGLIONI",       pts: 150  },
+        { jugador: "RAFAEL SILVETTI",       pts: 150  },
+        { jugador: "FACUNDO CHAMORRO",      pts: 150  },
+        { jugador: "FACUNDO NEME",          pts: 150  },
+        { jugador: "DENIS RIGGONI",         pts: 150  },
+        { jugador: "GASTON ZANONI",         pts: 150  },
+        { jugador: "JOAQUIN CUELLAR",       pts: 150  },
+        { jugador: "MAXI PARADELO",         pts: 150  },
+        { jugador: "JEREMIAS ORTIZ",        pts: 100  },
+        { jugador: "SOLEDAD JUGO",          pts: 100  },
         { jugador: "ALEJANDRO ROMUALDO",    pts: 50   },
         { jugador: "CRISTIAN CEREZO",       pts: 50   },
         { jugador: "ESTEBAN TAPIA",         pts: 50   },
         { jugador: "FERNANDO PAZ",          pts: 50   },
-        { jugador: "JEREMIAS ORTIZ",        pts: 50   },
         { jugador: "JOSE TREJO",            pts: 50   },
         { jugador: "IGNACIO FIAD",          pts: 50   },
         { jugador: "LUCAS FERNANDEZ",       pts: 50   },
@@ -581,22 +725,20 @@ const ranking = {
         { jugador: "MARCOS QUINTEROS",      pts: 50   },
         { jugador: "NAHUEL MIGUEL",         pts: 50   },
         { jugador: "SANTIAGO CATELLA",      pts: 50   },
-        { jugador: "SOLEDAD JUGO",          pts: 50   },
-        { jugador: "XIMENA JEREZ",          pts: 50   },
         { jugador: "GUSTAVO GIMENEZ",       pts: 50   },
-        { jugador: "RAUL DUCCA",            pts: 50   },
         { jugador: "CARLOS SAYAGO",         pts: 50   },
         { jugador: "NICOLAS SCARANO",       pts: 50   },
+        { jugador: "VALENTIN ACUÑA",        pts: 50   },
     ],
 };
 
 const sponsors = [
-    { nombre: "Ford Lo Bruno",             logo: "logosponsorlobruno.png",      url: "https://www.instagram.com/lobrunoautomotores"          },
-    { nombre: "OneFit Supplements",        logo: "logosponsoronefit.png",       url: "https://www.instagram.com/onefit.suplements"           },
-    { nombre: "Nueva Clínica Santa Lucía", logo: "logosponsorsantalucia.png",   url: "https://www.instagram.com/clinica_santalucia"          },
-    { nombre: "Joyex Plaza",               logo: "logosponsorjoyex.png",        url: "https://www.instagram.com/joyexplaza"                  },
-    { nombre: "JLS Distribuidora",         logo: "logosponsorjorgelopez.png",   url: "https://www.instagram.com/jorgelopezsaad_distribuidora" },
-    { nombre: "CyS",                       logo: "logosponsorcys.png",          url: "https://www.instagram.com/insta.cys"                   },
+    { nombre: "Ford Lo Bruno",             logo: "logosponsorlobruno.png",      url: "https://www.instagram.com/lobrunoautomotores"           },
+    { nombre: "OneFit Supplements",        logo: "logosponsoronefit.png",       url: "https://www.instagram.com/onefit.suplements"            },
+    { nombre: "Nueva Clinica Santa Lucia", logo: "logosponsorsantalucia.png",   url: "https://www.instagram.com/clinica_santalucia"           },
+    { nombre: "Joyex Plaza",               logo: "logosponsorjoyex.png",        url: "https://www.instagram.com/joyexplaza"                   },
+    { nombre: "JLS Distribuidora",         logo: "logosponsorjorgelopez.png",   url: "https://www.instagram.com/jorgelopezsaad_distribuidora"  },
+    { nombre: "CyS",                       logo: "logosponsorcys.png",          url: "https://www.instagram.com/insta.cys"                    },
 ];
 
 const totalJugadores = Object.values(ranking).reduce((sum, cat) => sum + cat.length, 0);
@@ -628,7 +770,6 @@ function animateCount(el, target, duration = 1500) {
         el.textContent = Math.floor(start);
     }, 16);
 }
-
 window.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => animateCount(document.getElementById('stat-jugadores'), totalJugadores), 400);
 });
@@ -649,7 +790,7 @@ function renderRanking(cat) {
         tbody.appendChild(tr);
     });
 }
-['3ra', '4ta', '5ta', '6ta', '7ma'].forEach(renderRanking);
+['5da','6da','7da','libre','4ta','5ta','6ta','7ma'].forEach(renderRanking);
 
 document.getElementById('tabs-nav').addEventListener('click', (e) => {
     const btn = e.target.closest('.tab-btn');
@@ -661,7 +802,7 @@ document.getElementById('tabs-nav').addEventListener('click', (e) => {
     document.getElementById(`panel-${cat}`).classList.add('active');
 });
 
-// Sponsors slider con links de Instagram
+// Sponsors slider
 const track = document.getElementById('slider-track');
 [...sponsors, ...sponsors].forEach(s => {
     const link = document.createElement('a');
@@ -674,7 +815,7 @@ const track = document.getElementById('slider-track');
     track.appendChild(link);
 });
 
-// Fade-up al hacer scroll
+// Fade-up
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.1 });

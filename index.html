@@ -727,12 +727,13 @@ const ranking = {
 };
 
 const sponsors = [
-    { nombre: "Ford Lo Bruno",             logo: "logosponsorlobruno.png",      url: "https://www.instagram.com/lobrunoautomotores"           },
-    { nombre: "OneFit Supplements",        logo: "logosponsoronefit.png",       url: "https://www.instagram.com/onefit.suplements"            },
-    { nombre: "Nueva Clinica Santa Lucia", logo: "logosponsorsantalucia.png",   url: "https://www.instagram.com/clinica_santalucia"           },
-    { nombre: "Joyex Plaza",               logo: "logosponsorjoyex.png",        url: "https://www.instagram.com/joyexplaza"                   },
-    { nombre: "JLS Distribuidora",         logo: "logosponsorjorgelopez.png",   url: "https://www.instagram.com/jorgelopezsaad_distribuidora"  },
-    { nombre: "CyS",                       logo: "logosponsorcys.png",          url: "https://www.instagram.com/insta.cys"                    },
+    { nombre: "Nueva Clinica Santa Lucia", logo: "logosponsorsantalucia.png",  url: "https://www.instagram.com/clinica_santalucia"           },
+    { nombre: "JLS Distribuidora",         logo: "logosponsorjorgelopez.png",  url: "https://www.instagram.com/jorgelopezsaad_distribuidora"  },
+    { nombre: "CEN",                       logo: "logosponsorcen.png",         url: null                                                      },
+    { nombre: "Panaderia Palau",           logo: "logosponsorpalau.png",       url: "https://www.instagram.com/panaderiapalau"                },
+    { nombre: "Il Biondo",                 logo: "logosponsorbiondo.png",      url: "https://www.instagram.com/ilbiondo.arg"                  },
+    { nombre: "Carnes La Estacion",        logo: "logosponsorestacion.png",    url: "https://www.instagram.com/carneslaestacionemmsa"         },
+    { nombre: "Bonafarma",                 logo: "logosponsorbonafarma.png",   url: "https://www.instagram.com/bonafarma_sde"                 },
 ];
 
 const totalJugadores = Object.values(ranking).reduce((sum, cat) => sum + cat.length, 0);
@@ -747,8 +748,6 @@ torneos.forEach((t, i) => {
         <div class="torneo-nombre">${t.nombre}</div>
         <div class="torneo-info">
             <span>Fecha · <strong>${t.fecha}</strong></span>
-            <span>Jugadores · <strong>${t.jugadores}</strong></span>
-            <span>Categorías · <strong>${t.categorias}</strong></span>
         </div>`;
     grid.appendChild(card);
 });
@@ -799,14 +798,12 @@ document.getElementById('tabs-nav').addEventListener('click', (e) => {
 // Sponsors slider
 const track = document.getElementById('slider-track');
 [...sponsors, ...sponsors].forEach(s => {
-    const link = document.createElement('a');
-    link.href = s.url;
-    link.target = '_blank';
-    link.rel = 'noopener noreferrer';
-    link.className = 'sponsor-item';
-    link.innerHTML = `<img src="${s.logo}" alt="${s.nombre}"
+    const el = s.url ? document.createElement('a') : document.createElement('div');
+    if (s.url) { el.href = s.url; el.target = '_blank'; el.rel = 'noopener noreferrer'; }
+    el.className = 'sponsor-item';
+    el.innerHTML = `<img src="${s.logo}" alt="${s.nombre}"
         onerror="this.style.display='none'; this.parentNode.innerHTML='<span class=\\'sponsor-placeholder\\'>${s.nombre}</span>'">`;
-    track.appendChild(link);
+    track.appendChild(el);
 });
 
 // Fade-up

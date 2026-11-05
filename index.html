@@ -69,17 +69,24 @@ nav {
         repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(255,255,255,0.03) 60px);
     pointer-events: none;
 }
-.hero-org-logo {
-    width: 150px; height: 150px; border-radius: 20px;
-    border: 2px solid rgba(232,0,28,0.5);
-    box-shadow: 0 0 30px rgba(232,0,28,0.2), 0 0 60px rgba(0,212,255,0.08);
-    overflow: hidden; margin-bottom: 24px;
-    background: #111; display: flex; align-items: center; justify-content: center;
-    transition: box-shadow 0.3s;
+.hero-main-logo {
+    position: relative; width: 320px; margin: 0 auto 28px;
 }
-.hero-org-logo:hover { box-shadow: 0 0 40px rgba(232,0,28,0.35), 0 0 80px rgba(0,212,255,0.12); }
-.hero-org-logo img { width: 100%; height: 100%; object-fit: contain; }
-.logo-placeholder { font-family: 'Bebas Neue', sans-serif; font-size: 1rem; letter-spacing: 0.18em; color: rgba(255,255,255,0.2); padding: 10px; }
+.hero-main-logo::before {
+    content: ''; position: absolute;
+    inset: -60px;
+    background: radial-gradient(ellipse at center, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.08) 45%, transparent 72%);
+    pointer-events: none;
+    border-radius: 50%;
+}
+.hero-main-logo img {
+    width: 100%; height: auto; display: block;
+    border-radius: 16px;
+    position: relative;
+}
+@media (max-width: 480px) {
+    .hero-main-logo { width: 220px; }
+}
 .hero-tag { display: inline-block; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.25em; color: var(--celeste); border: 1px solid rgba(0,212,255,0.4); padding: 6px 18px; border-radius: 2px; margin-bottom: 28px; }
 .hero-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(4rem, 12vw, 9rem); line-height: 0.9; letter-spacing: 0.06em; margin-bottom: 10px; }
 .hero-title .line-rojo   { color: var(--rojo); display: block; }
@@ -119,17 +126,17 @@ nav {
 .tabs-group-buttons { display: flex; align-items: center; justify-content: center; gap: 6px; flex-wrap: wrap; }
 .tabs-group-label {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.1rem; letter-spacing: 0.28em;
-    color: rgba(0,212,255,0.6);
-    position: relative; display: flex; align-items: center; gap: 14px;
+    font-size: 1.2rem; letter-spacing: 0.3em;
+    color: var(--celeste);
+    display: flex; align-items: center; gap: 14px;
 }
 .tabs-group-label::before, .tabs-group-label::after {
-    content: ''; display: block; width: 50px; height: 1px;
-    background: rgba(0,212,255,0.2);
+    content: ''; display: block; width: 40px; height: 1px;
+    background: rgba(0,212,255,0.35);
 }
-.tabs-group.fem .tabs-group-label { color: rgba(180,80,255,0.65); }
+.tabs-group.fem .tabs-group-label { color: #CC44FF; }
 .tabs-group.fem .tabs-group-label::before,
-.tabs-group.fem .tabs-group-label::after { background: rgba(180,80,255,0.2); }
+.tabs-group.fem .tabs-group-label::after { background: rgba(180,80,255,0.35); }
 .tab-btn {
     font-family: 'Montserrat', sans-serif; font-size: 0.68rem; font-weight: 700;
     letter-spacing: 0.15em; text-transform: uppercase; padding: 9px 22px;
@@ -223,16 +230,10 @@ footer { background: #050505; border-top: 2px solid var(--rojo); padding: 48px 4
 
 <!-- HERO -->
 <section id="inicio">
-    <div class="hero-org-logo">
-        <img src="logosdepadeltour.png" alt="SDE Pádel Tour"
-             onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
-        <span class="logo-placeholder" style="display:none">SDE</span>
-    </div>
     <span class="hero-tag">Temporada 2026</span>
-    <h1 class="hero-title">
-        <span class="line-rojo">SDE PÁDEL</span>
-        <span class="line-celeste">TOUR</span>
-    </h1>
+    <div class="hero-main-logo">
+        <img src="logosdepadeltour.png" alt="SDE Pádel Tour">
+    </div>
     <p class="hero-subtitle">Somos el primer torneo puntuable de la provincia</p>
     <div class="hero-stats fade-up">
         <div class="stat-item">
